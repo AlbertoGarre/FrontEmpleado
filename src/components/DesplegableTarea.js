@@ -1,6 +1,7 @@
 import React from 'react'
 
 const DesplegableTarea = ({tarea}) => {
+
     return (
 
         <div className="card">
@@ -14,7 +15,6 @@ const DesplegableTarea = ({tarea}) => {
                     </div>
                 </button>
             </div>
-
             <div id="collapseOne" className="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                 <div className="card-body">
 
@@ -63,7 +63,6 @@ const DesplegableTarea = ({tarea}) => {
                 </div>
             </div>
         </div>
-
     )
 }
 

@@ -9,14 +9,15 @@ import NuevoEnvio from './components/NuevoEnvio'
 import Acceso from './components/Acceso'
 import InicioEmpleado from './components/InicioEmpleado'
 import InicioAdmin from './components/InicioAdmin'
-import TareasFinalizadas from './components/TareasFinalizadas'
+import TareasFinalizadas from './components/ListaTareas'
 import TareasPendientes from './components/TareasPendientes'
 import AsignacionTareas from './components/AsignacionTareas'
-import ConfirmacionDatos from './components/ConfirmacionDatos'
 import NuevoEmpleado from './components/NuevoEmpleado'
 import ListaUsuarios from './components/ListaUsuarios'
 import PoliticaPrivacidad from './components/PoliticaPrivacidad'
 import HeaderInterno from './components/HeaderInterno'
+import Confirmacion from './components/Confirmacion'
+
 
 
 
@@ -69,10 +70,9 @@ const App = () => {
                 <Route path='/TareasFinalizadas' element={<TareasFinalizadas />} />
                 <Route path='/TareasPendientes' element={<TareasPendientes />} />
                 <Route path='/AsignacionTareas' element={<AsignacionTareas />} />
-                <Route path='/ConfirmacionDatos' element={<ConfirmacionDatos />} />
                 <Route path='/NuevoEmpleado' element={<NuevoEmpleado />} />
                 <Route path='/ListaUsuarios' element={<ListaUsuarios />} />
-               
+                <Route path='/Confirmacion' element={<Confirmacion />} />
 
             </Routes>
             <Footer />

@@ -1,7 +1,7 @@
 import React from 'react'
 import DesplegableTarea from './DesplegableTarea'
 
-const TareasFinalizadas = () => {
+const ListaTareas = () => {
 
     const tareas = [
         {
@@ -80,5 +80,5 @@ const TareasFinalizadas = () => {
         </div>
     )
 }
-export default TareasFinalizadas
+export default ListaTareas
 
