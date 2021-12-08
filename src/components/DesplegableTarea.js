@@ -1,16 +1,16 @@
 import React from 'react'
 
-const DesplegableTarea = () => {
+const DesplegableTarea = ({tarea}) => {
     return (
 
         <div className="card">
             <div className="card-header p-1" id="headingOne">
                 <button className="w-100 btn btn-link p-0 m-0" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                     <div className=" d-flex justify-content-between h5">
-                        <a>20:00</a><a>Los Madriles</a><a>30007</a><a>2</a>
+                        <a>{tarea.horario}</a><a>{tarea.municipio}</a><a>{tarea.cp}</a><a>{tarea.bultos}</a>
                     </div>
                     <div className=" d-flex justify-content-between m-0" style={{ fontSize: "0.9rem" }}>
-                        <a >C/ Castillo del Madrigal de las altas torres, </a> &nbsp; <a>20</a>
+                        <a >{tarea.direccion} </a> &nbsp; <a>{tarea.numero}</a>
                     </div>
                 </button>
             </div>
@@ -19,40 +19,46 @@ const DesplegableTarea = () => {
                 <div className="card-body">
 
                     <div className="d-flex justify-content-between h5">
-                        <a>Alberto</a><a>648182808</a>
+                        <a>{tarea.nombre}</a><a>{tarea.telefono}</a>
                     </div>
                     <div className="d-flex justify-content-between  h6  ">
-                        <a >Garre Mula Muñoz Marín</a>
+                        <a >{tarea.apellidos}</a>
                     </div>
                     <br />
                     <div >
                         <label><b>Dirección: </b></label><br />
-                        <a >Camino viejo del Carcanox n 45 2 esc 4H</a>
+                        <a >
+                            {tarea.direccion} &nbsp;
+                            {tarea.numero != '' ? 'nº' + tarea.numero : ''}  &nbsp;
+                            {tarea.escalera!= '' ? 'Esc.' + tarea.escalera : ''}  &nbsp;
+                            {tarea.planta != '' ? tarea.planta + 'º': ''}  &nbsp;
+                            {tarea.puerta}
+                        </a>
                     </div>
                     <br />
                     <div >
                         <label><b>Nº bultos: </b> </label>
-                        <a > 2</a>
+                        <a >{tarea.bultos}</a>
                     </div>
                     <div >
                         <label><b>Entregar antes de: </b> </label>
-                        <a > 20:00</a>
+                        <a > {tarea.horario}</a>
                     </div>
                     <div >
                         <label><b>Municipio: </b> </label>
-                        <a > Los Madriles</a>
+                        <a > {tarea.municipio}</a>
                     </div>
                     <div >
                         <label><b>CP: </b></label>
-                        <a > 30007</a>
+                        <a > {tarea.cp}</a>
                     </div>
                     <br />
                     <div >
                         <label><b>Observaciones: </b></label><br />
-                        <a >Loren Ipsum entrega por la tarde</a>
+                        <a >{tarea.observaciones}</a>
                     </div>
                     <br />
-                    <button type="submit" className="btn btn-success col-md-4 m-0 p-2 px-4 bg-success">Confirmar</button>
+                    <button type="submit" className="btn btn-success col-md-4 m-0 p-2 px-4 bg-success" style={tarea.terminada ? {visibility: "hidden"} : {}}>{tarea.tipo == 'entrega' ? 'Entrega': 'Recoge'}</button>
                     <br />
                 </div>
             </div>

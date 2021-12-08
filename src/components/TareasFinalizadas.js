@@ -10,7 +10,7 @@ const TareasFinalizadas = () => {
             provincia: "Murcia",
             municipio: "Murcia",
             cp: "30007",
-            direccion: "Avenida Abenarabi n45",
+            direccion: "Avenida Abenarabi ",
             numero: "4",
             escalera: "2",
             planta: "4",
@@ -22,6 +22,7 @@ const TareasFinalizadas = () => {
             observaciones: "Rápido",
             tarifa: "1",
             horario: "20:00",
+            terminada: true,
         },
         {
             key: 2,
@@ -41,6 +42,7 @@ const TareasFinalizadas = () => {
             observaciones: "",
             tarifa: "3",
             horario: "10:00",
+            terminada: false,
         },
         {
             key: 3,
@@ -60,6 +62,7 @@ const TareasFinalizadas = () => {
             observaciones: "Entregar por la mañana",
             tarifa: "2",
             horario: "20:00",
+            terminada: false,
         },
     ]
 
@@ -67,8 +70,12 @@ const TareasFinalizadas = () => {
         <div id="content " className=" m-0 p-4 " style={{ width: "100%" }}>
             <br /><br /><br />
             <div id="accordion">
-                <DesplegableTarea/>
-                <DesplegableTarea/>
+
+                {tareas.map((tarea) => (
+                    <DesplegableTarea
+                        tarea={tarea}
+                    />
+                ))}
             </div>
         </div>
     )
