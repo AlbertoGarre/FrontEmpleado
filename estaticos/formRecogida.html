@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--Me descargo el css de bootstrap desde un CDN (content delivery nerwork) Un CDN son grandes empresas que tienen redes grandes de servidores distribuidos por todo el mundo que pueden ofrecer archivos muy usados con muy poca latencia, como en este caso bootstrap. Con el fin por ejemplo de mejorar la experiencia de usuario a la hora de comprar en una tienda-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Contoso es la marca predeterminada de Micorsoft para una empresa ficticia-->
+    <title>Contosox</title>
+</head>
+
+<body>
+
+    <div id="root">
+        <!-- Barra de Navegación-->
+        <nav id="header" class="cristal navbar navbar-expand-sm text-dark fixed-top navbar-light">
+            <a class="navbar-brand text-success" href="#"><i class="fab fa-contao display-4"></i></a>
+
+            <div class="nav-item">
+                <a class="nav-link bg-transparent text-success border-bottom border-success pb-2" href="#">Enviar</a>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarsExample03">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Seguimiento <span class="sr-only">(current)</span></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link " href="#">Soluciones logísticas</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown">Empresa</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Quienes somos</a>
+                            <a class="dropdown-item" href="#">Servicios</a>
+                            <a class="dropdown-item" href="#">Trabaja con nosotros</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#">Tarifas</a>
+                    </li>
+                </ul>
+                <a class="my-2 my-md-0 text-dark">
+                    Usuarios
+                </a>
+            </div>
+
+        </nav>
+
+        <!-- Contenido de la página-->
+        <div id="content" class="container m-0 p-4 ">
+            <h2 class="w-auto text-center py-5 mt-3">Solicita Recogida</h2>
+            <div class="row">
+
+                <div class="col-md-4 order-md-2 mb-4 mt-md-5">
+
+                    <h4 class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="text-muted">Tu carrito</span>
+                        <span class="badge badge-secondary badge-pill">3</span>
+                    </h4>
+                    <ul class="list-group mb-3">
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div>
+                                <h6 class="my-0">Económica</h6>
+                                <small class="text-muted">Hasta 1 kg; 30x20x10 cm </small>
+                            </div>
+                            <span class="text-muted">5€</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div>
+                                <h6 class="my-0">Hogar</h6>
+                                <small class="text-muted">Hasta 7 kg; 50x50x50 cm</small>
+                            </div>
+                            <span class="text-muted">15€</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between bg-light text-success">
+                            <div class="">
+                                <h6 class="my-0">Profesional</h6>
+                                <small class="">Hasta 25 kg; Volumen transportable*</small>
+                            </div>
+                            <span class="">50€</span>
+                        </li>
+
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Total (Euros)</span>
+                            <strong>50€</strong>
+                        </li>
+                    </ul>
+
+
+                </div>
+
+                <div class="col-md-8 order-md-1">
+                    <form>
+
+                        <h3>Datos generales</h3>
+                        <!--Datos generales-->
+                        <div class="form-row m-0 p-0">
+                            <div class="form-group m-0 p-0 mr-2">
+                                <label for="inputEmail">E-mail</label>
+                                <input type="text" class="form-control m-0 p-0" id="inputEmail"
+                                    placeholder="ejemplo@correo.com">
+                            </div>
+                            <div class="form-group  m-0 p-0 mr-2">
+                                <label for="inputSolicitante">Solicitante(remitente)</label>
+                                <input type="text" class="form-control m-0 p-0" id="inputSolicitante"
+                                    placeholder="Solicitante">
+                            </div>
+                            <div class="form-group m-0 p-0 mr-2">
+                                <label for="inputTelefono">Teléfono</label>
+                                <input type="text" class="form-control m-0 p-0" id="inputTelefono"
+                                    placeholder="968 82 60 47">
+                            </div>
+                        </div>
+
+                        <div class="form-row m-0 p-0 mt-2">
+                            <div class="form-group col-md-2 m-0 p-0" >
+                                <label for=" inputNIF">NIF</label>
+                                <input type="text" class="form-control m-0 p-0" id="inputNIF" placeholder="48000000Z">
+                            </div>
+                        </div>
+
+                        <br><br>
+
+                        <h3>Datos de recogida</h3>
+
+                        <div class="form-row m-0 p-0">
+                            <div class="form-group col-md-3 m-0 p-0 mr-2">
+                                <label for="inputState">Fecha de recogida</label>
+                                <input type="date" id="inputState" class="form-control m-0 p-0">
+                                </input>
+                            </div>
+                            <div class="form-group col-md-2 m-0 p-0 mt-2 mr-2">
+                                <label for="inputCP"></label>
+                                <input type="text" class="form-control m-0 p-0" id="inputCP" placeholder="De 10:00 h">
+                            </div>
+                            <div class="form-group col-md-2 m-0 p-0 mt-2 mr-2">
+                                <label for="inputCP"></label>
+                                <input type="text" class="form-control m-0 p-0" id="inputCP" placeholder="a 15:00 h">
+                            </div>
+                            <div class="form-group col-md-2 m-0 p-0 mt-2 mr-2">
+                                <label for="inputCP"></label>
+                                <input type="text" class="form-control m-0 p-0" id="inputCP" placeholder="y de 17:00 h">
+                            </div>
+                            <div class="form-group col-md-2 m-0 p-0 mt-2 mr-2">
+                                <label for="inputCP"></label>
+                                <input type="text" class="form-control m-0 p-0" id="inputCP" placeholder="a 19:00 h">
+                            </div>
+                        </div>
+
+                        <div class="form-row m-0 p-0">
+                            <div class="form-group m-0 p-0 mr-2">
+                                <label for="inputEmail"></label>
+                                <Select type="text" class="form-control m-0 p-0" id="inputEmail" placeholder="España">
+                                    <option value="Esp">España</option>
+                                    <option value="Por">Portugal</option>
+                                    <option value="And">Andorra</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-2 m-0 p-0 mr-2">
+                                <label for="inputCP"></label>
+                                <input type="text" class="form-control m-0 p-0" id="inputCP" placeholder="30401">
+                            </div>
+
+
+                            <div class="form-group m-0 p-0 mr-2">
+                                <label for="inputPoblación"></label>
+                                <input type="text" class="form-control m-0 p-0" id="inputPoblación"
+                                    placeholder="Población">
+                            </div>
+                        </div>
+
+                        <!-- Dirección: nombre, via, número, piso-->
+                        <div class="form-group col-md-6 m-0 p-0">
+                            <label for="inputDireccion"></label>
+                            <input type="text" class="form-control m-0 p-0" id="inputCP"
+                                placeholder="Dirección: nombre, via, número, piso">
+                        </div>
+                        <!-- Empresa/Persona de recogida-->
+                        <div class="form-row m-0 p-0 ">
+                            <div class="form-group col-md-2 m-0 p-0 mr-2">
+                                <label for="inputAtencionRecogida"></label>
+                                <input type="text" class="form-control m-0 p-0" id="inputAtencionRecogida"
+                                    placeholder="Empresa/Persona de recogida">
+                            </div>
+                            <div class="form-group col-md-2 m-0 p-0 mr-2">
+                                <label for="inputTelefonoRecogida"></label>
+                                <input type="text" class="form-control m-0 p-0" id="inputTelefonoRecogida"
+                                    placeholder="Teléfono">
+                            </div>
+                            <div class="form-group col-md-2 m-0 p-0 mr-2">
+                                <label for="inputNombreAtencionRecogida"></label>
+                                <input type="text" class="form-control m-0 p-0" id="inputNombreAtencionRecogida"
+                                    placeholder="Persona de contacto">
+                            </div>
+                        </div>
+                        <!--Observaciones de recogida-->
+                        <div class="form-group col-md-6 m-0 p-0">
+                            <label for="inputObservacionesRecogida"></label>
+                            <input type="text" class="form-control m-0 p-0" id="inputObservacionesRecogida"
+                                placeholder="Observaciones de la recogida">
+                        </div>
+
+                        <a href="######">Limpiar campos</a>
+                        <br>
+                        <br><br>
+
+
+                        <h3>Datos de Entrega</h3>
+
+                        <div class="form-row m-0 p-0">
+                            <div class="form-group m-0 p-0 mr-2">
+                                <label for="inputEmail"></label>
+                                <select type="text" class="form-control m-0 p-0" id="inputEmail" placeholder="España">
+                                    <option value="Esp">España</option>
+                                    <option value="Por">Portugal</option>
+                                    <option value="And">Andorra</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-2 m-0 p-0 mr-2">
+                                <label for="inputCP"></label>
+                                <input type="text" class="form-control m-0 p-0" id="inputCP" placeholder="30401">
+                            </div>
+
+
+                            <div class="form-group m-0 p-0 mr-2">
+                                <label for="inputPoblación"></label>
+                                <input type="text" class="form-control m-0 p-0" id="inputPoblación"
+                                    placeholder="Población">
+                            </div>
+                        </div>
+
+                        <!-- Dirección: nombre, via, número, piso-->
+                        <div class="form-group col-md-6 m-0 p-0">
+                            <label for="inputDireccion"></label>
+                            <input type="text" class="form-control m-0 p-0" id="inputCP"
+                                placeholder="Dirección: nombre, via, número, piso">
+                        </div>
+                        <!-- Destinatario-->
+                        <div class="form-row m-0 p-0">
+                            <div class="form-group col-md-2 m-0 p-0 mr-2">
+                                <label for="inputDestinatario"></label>
+                                <input type="text" class="form-control m-0 p-0" id="inputDestinatario"
+                                    placeholder="Destinatario">
+                            </div>
+                            <div class="form-group col-md-2 m-0 p-0 mr-2">
+                                <label for="inputTelefonoEntrega"></label>
+                                <input type="text" class="form-control m-0 p-0" id="inputTelefonoEntrega"
+                                    placeholder="Teléfono">
+                            </div>
+                            <div class="form-group col-md-2 m-0 p-0 mr-2">
+                                <label for="inputNombreAtencionEntrega"></label>
+                                <input type="text" class="form-control m-0 p-0" id="inputNombreAtencionEntrega"
+                                    placeholder="A la atención de ">
+                            </div>
+                        </div>
+                        <!--Observaciones de recogida-->
+                        <div class="form-group col-md-6 m-0 p-0">
+                            <label for="inputObservacionesEntrega"></label>
+                            <input type="text" class="form-control m-0 p-0" id="inputObservacionesEntrega"
+                                placeholder="Observaciones de la entrega">
+                        </div>
+
+                        <a href="######">Limpiar campos</a>
+
+                    </form>
+                </div>
+            </div>
+            <!--fin de formulario-->
+
+            <!-- Tarjetas de tarifas-->
+
+
+            <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+                <h3 class="display-4">Tarifas</h3>
+            </div>
+
+            <div class="container">
+                <div class="card-deck mb-3 text-center">
+                    <div class="card mb-4 shadow-sm ">
+
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-normal">Económica</h4>
+                        </div>
+                        <div class="card-body ">
+                            <h1 class="card-title pricing-card-title">5€ <small class="text-muted">por envío</small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Hasta 1 kg de peso</li>
+                                <li>Volumen inferior a 30x20x10 cm</li>
+                                <li>Entrega antes de 48 horas</li>
+                                <li>El mejor servicio</li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-normal">Hogar</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title">15€ <small class="text-muted">por envío</small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Hasta 7 kg de peso</li>
+                                <li>Volumen inferior a 50x50x50 cm</li>
+                                <li>Entrega antes de 48 horas</li>
+                                <li>El mejor servicio</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-normal">Profesional</h4>
+                        </div>
+                        <div class="card-body bg-success text-light">
+                            <h1 class="card-title pricing-card-title">50€ <small class="text-light">por envío</small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Hasta 25 kg de peso</li>
+                                <li>Volumen transportable por un operario</li>
+                                <li>Entrega antes de 48 horas</li>
+                                <li>El mejor servicio</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- FIN Tarjetas de tarifas-->
+
+
+
+                <!--Aceptar formulario-->
+                <div class="form-group m-0 p-0 pl-2 pt-4 pb-5">
+                    <div class="form-check m-0 p-0">
+                        <input class="form-check-input m-0 p-0 mt-1" type="checkbox" id="gridCheck">
+                        <label class="form-check-label m-0 pl-4" for="gridCheck">
+                            He leido y acepto <a href="########" class="text-success">la política de privacidad y
+                                condiciones de uso de la
+                                web</a> *
+                            campo obligatorio
+                        </label>
+                    </div>
+
+                </div>
+                <div class="form-row m-0 p-0 ">
+                    <button type="submit" class="btn btn-success col-md-4 m-0 p-2 px-4 bg-success">Enviar</button>
+                </div>
+            </div>
+            <!--fin de aceptar formulario-->
+
+
+        </div>
+        <div id="footer">
+            <!-- Pie de página-->
+
+            <footer class="text-center text-lg-start bg-light text-muted">
+                <br>
+
+                <!-- Section: Links  -->
+                <section class="">
+                    <div class="container text-center text-md-start mt-5">
+                        <!-- Grid row -->
+                        <div class="row mt-3">
+                            <!-- Grid column -->
+                            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                                <!-- Content -->
+                                <h6 class="text-uppercase fw-bold mb-4">
+                                    <i class="fab fa-contao"></i> Contosox
+                                </h6>
+
+                            </div>
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+                            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                                <!-- Links -->
+                                <h6 class="text-uppercase fw-bold mb-4">
+                                    Products
+                                </h6>
+                                <p>
+                                    <a href="#!" class="text-reset">Angular</a>
+                                </p>
+                                <p>
+                                    <a href="#!" class="text-reset">React</a>
+                                </p>
+                                <p>
+                                    <a href="#!" class="text-reset">Vue</a>
+                                </p>
+                                <p>
+                                    <a href="#!" class="text-reset">Laravel</a>
+                                </p>
+                            </div>
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+                            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                                <!-- Links -->
+                                <h6 class="text-uppercase fw-bold mb-4">
+                                    Useful links
+                                </h6>
+                                <p>
+                                    <a href="#!" class="text-reset">Pricing</a>
+                                </p>
+                                <p>
+                                    <a href="#!" class="text-reset">Settings</a>
+                                </p>
+                                <p>
+                                    <a href="#!" class="text-reset">Orders</a>
+                                </p>
+                                <p>
+                                    <a href="#!" class="text-reset">Help</a>
+                                </p>
+                            </div>
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+                            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                                <!-- Links -->
+                                <h6 class="text-uppercase fw-bold mb-4">
+                                    Contact
+                                </h6>
+                                <p><i class="fas fa-home me-3"></i> España, Murcia 30004</p>
+                                <p>
+                                    <i class="fas fa-envelope me-3"></i>
+                                    info@contosox.com
+                                </p>
+                                <p><i class="fas fa-phone me-3"></i> + 34 234 567 88</p>
+                                <p><i class="fas fa-print me-3"></i> + 34 234 567 89</p>
+                            </div>
+                            <!-- Grid column -->
+                        </div>
+                        <!-- Grid row -->
+                    </div>
+                </section>
+                <!-- Section: Links  -->
+
+                <!-- Copyright -->
+                <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+                    Copyright © 2021
+                    <a class="text-reset fw-bold" href="https://AlbertGarre.com/">Alberto Garre Muñoz</a>
+                </div>
+                <!-- Copyright -->
+            </footer>
+            <!-- Footer -->
+
+        </div>
+
+        <!-- Archivos JS para bootstrap. Estos enlaces ayudan a mejorar la experiencia de usuario reduciendo la latencia-->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/js/all.min.js"
+            integrity="sha512-cyAbuGborsD25bhT/uz++wPqrh5cqPh1ULJz4NSpN9ktWcA6Hnh9g+CWKeNx2R0fgQt+ybRXdabSBgYXkQTTmA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</body>
+
+</html>
