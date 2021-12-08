@@ -54,18 +54,16 @@ const App = () => {
     }
 
 
+
     return (
         <Router>
 
-            <HeaderCliente />
+            <HeaderInterno/>
             <Routes>
 
-                <Route path='/' element={<Portada codigoSeguimiento={codigoSeguimiento} setCodigoSeguimiento={setCodigoSeguimiento} />} />
-                <Route path='/Tarifas' element={<Tarifas pulsa={pulsa} tarifas={tarifas} tarifaSeleccionada={tarifaSeleccionada} />} />
-                <Route path='/NuevoEnvio' element={<NuevoEnvio pulsa={pulsa} tarifas={tarifas} tarifaSeleccionada={tarifaSeleccionada} />} />
-                <Route path='/Seguimiento' element={<Seguimiento codigoSeguimiento={codigoSeguimiento} setCodigoSeguimiento={setCodigoSeguimiento} />} />
-
+                <Route path='/' element={<Acceso />} />
                 <Route path='/Acceso' element={<Acceso />} />
+                
                 <Route path='/InicioEmpleado' element={<InicioEmpleado />} />
                 <Route path='/InicioAdmin' element={<InicioAdmin />} />
                 <Route path='/TareasFinalizadas' element={<TareasFinalizadas />} />
@@ -74,8 +72,7 @@ const App = () => {
                 <Route path='/ConfirmacionDatos' element={<ConfirmacionDatos />} />
                 <Route path='/NuevoEmpleado' element={<NuevoEmpleado />} />
                 <Route path='/ListaUsuarios' element={<ListaUsuarios />} />
-                <Route path='/PoliticaPrivacidad' element={<PoliticaPrivacidad />} />
-                <Route path='/HeaderInterno' element={<HeaderInterno />} />
+               
 
             </Routes>
             <Footer />
