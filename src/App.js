@@ -23,8 +23,15 @@ import Confirmacion from './components/Confirmacion'
 
 const App = () => {
 
-    const [usuarios, setUsuarios] = useState([
+    const [usuarioEdicion, setUsuarioEdicion] = useState(0)
+    
+    const editaUsuario = (key) => {
+        setUsuarioEdicion(key)
+        console.log(usuarioEdicion)
+    }
+    
 
+    const [usuarios, setUsuarios] = useState([
         {
             key: 1,
             nombre: "Alberto",
@@ -56,10 +63,10 @@ const App = () => {
             usuario: "heri",
             contraseña: "2211",
             franquicia: 1,
-            roles: ["reparto"]
+            roles: ["Reparto"]
         },
         {
-            key: 3,
+            key: 4,
             nombre: "Paco",
             apellidos: "Pérez",
             email: "paco.perez@gmail.com",
@@ -67,7 +74,7 @@ const App = () => {
             usuario: "pape",
             contraseña: "2112",
             franquicia: 1,
-            roles: ["reparto"]
+            roles: ["Reparto"]
         }
     ])
 
@@ -119,8 +126,8 @@ const App = () => {
                 <Route path='/TareasFinalizadas' element={<TareasFinalizadas />} />
                 <Route path='/TareasPendientes' element={<TareasPendientes />} />
                 <Route path='/AsignacionTareas' element={<AsignacionTareas />} />
-                <Route path='/NuevoEmpleado' element={<NuevoEmpleado />} />
-                <Route path='/ListaUsuarios' element={<ListaUsuarios usuarios={usuarios}/>} />
+                <Route path='/NuevoEmpleado' element={<NuevoEmpleado usuario={usuarios.find((usuario) => usuario.key == usuarioEdicion)} />} />
+                <Route path='/ListaUsuarios' element={<ListaUsuarios usuarios={usuarios} setUsuarioEdicion={editaUsuario}/>} />
                 <Route path='/Confirmacion' element={<Confirmacion />} />
 
             </Routes>

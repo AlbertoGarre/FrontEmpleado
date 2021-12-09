@@ -1,8 +1,17 @@
 import React from 'react'
 import FilaTablaUsuario from './FilaTablaUsuario'
+import { useNavigate } from 'react-router-dom';
 
-const ListaUsuarios = ({usuarios}) => {
+const ListaUsuarios = ({usuarios, setUsuarioEdicion}) => {
 
+    const navigate = useNavigate();
+   
+    const setUsuarioEdicionYRedirige = (key) => {
+        setUsuarioEdicion(key)
+        navigate('/NuevoEmpleado')
+        
+    }
+    
     return (
         <div>
             <br /><br /><br /><br /><br />
@@ -17,14 +26,16 @@ const ListaUsuarios = ({usuarios}) => {
                     </thead>
                     <tbody>
                         {usuarios.map((usuario) => (
-                            <FilaTablaUsuario usuario={usuario}/>)
+                            <FilaTablaUsuario 
+                                usuario={usuario}
+                                setUsuarioEdicionYRedirige={setUsuarioEdicionYRedirige}/>)
                         )}
                     </tbody>
                 </table>
             </div>
             <br /><br />
             <div className="d-flex justify-content-center">
-                <button className="btn btn-success btn-block col-3 col-sm-2 ml-3 ml-sm-3" type="submit">Nuevo usuario</button>
+                <button className="btn btn-success btn-block col-3 col-sm-2 ml-3 ml-sm-3" type="button" onClick={()=> setUsuarioEdicionYRedirige(0)} >Nuevo usuario</button>
             </div>
             <br /><br /><br />
         </div>
