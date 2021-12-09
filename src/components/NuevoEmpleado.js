@@ -2,6 +2,8 @@ import React from 'react'
 
 const NuevoEmpleado = () => {
 
+
+    
     return (
         <div id="content" className=" m-0 p-4" style={{ width: "100%" }}>
             <br />
@@ -44,8 +46,8 @@ const NuevoEmpleado = () => {
                         </div>
                     </div>
                     <div className="mb-3">
-                        <label for="address">Dirección</label>
-                        <input type="text" className="form-control" id="address" placeholder="Calle Mayor 1" required />
+                        <label for="address">Contraseña</label>
+                        <input type="password" className="form-control" id="address" required />
                         <div className="invalid-feedback">
                             Introduce una dirección.
                         </div>

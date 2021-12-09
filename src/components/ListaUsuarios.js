@@ -1,6 +1,7 @@
 import React from 'react'
+import FilaTablaUsuario from './FilaTablaUsuario'
 
-const ListaUsuarios = () => {
+const ListaUsuarios = ({usuarios}) => {
 
     return (
         <div>
@@ -15,26 +16,9 @@ const ListaUsuarios = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><a href="" className="text-success">Alberto Garre</a></td>
-                            <td>Admin</td>
-                            <td><a href="" className="text-success d-flex justify-content-end">Borrar</a></td>
-                        </tr>
-                        <tr>
-                            <td><a href="" className="text-success">Juan</a></td>
-                            <td>Oficina</td>
-                            <td><a href="" className="text-success d-flex justify-content-end">Borrar</a></td>
-                        </tr>
-                        <tr>
-                            <td><a href="" className="text-success">Paco</a></td>
-                            <td>Empleado</td>
-                            <td><a href="" className="text-success d-flex justify-content-end">Borrar</a></td>
-                        </tr>
-                        <tr>
-                            <td><a href="" className="text-success">Andrés</a></td>
-                            <td>Empleado</td>
-                            <td><a href="" className="text-success d-flex justify-content-end">Borrar</a></td>
-                        </tr>
+                        {usuarios.map((usuario) => (
+                            <FilaTablaUsuario usuario={usuario}/>)
+                        )}
                     </tbody>
                 </table>
             </div>
