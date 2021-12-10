@@ -120,12 +120,8 @@ const App = () => {
             <HeaderInterno/>
             <Routes>
 
-                <Route path='/' element={<Acceso />} />
-                <Route path='/Acceso' element={<Acceso />} />
+                <Route path='/' element={<InicioGeneral />} />
                 
-                <Route path='/InicioGeneral' element={<InicioGeneral />} />
-                <Route path='/InicioReparto' element={<InicioReparto />} />
-                <Route path='/InicioAdmin' element={<InicioAdmin />} />
                 <Route path='/TareasFinalizadas' element={<ListaTareas terminada={true}/>} />
                 <Route path='/TareasPendientes' element={<ListaTareas terminada={false}/>} />
                 <Route path='/AsignacionTareas' element={<AsignacionTareas />} />
