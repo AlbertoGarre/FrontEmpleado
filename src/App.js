@@ -7,7 +7,7 @@ import Tarifas from './components/Tarifas'
 import Seguimiento from './components/Seguimiento'
 import NuevoEnvio from './components/NuevoEnvio'
 import Acceso from './components/Acceso'
-import InicioEmpleado from './components/InicioEmpleado'
+import InicioReparto from './components/InicioReparto'
 import InicioAdmin from './components/InicioAdmin'
 import TareasFinalizadas from './components/ListaTareas'
 import TareasPendientes from './components/TareasPendientes'
@@ -17,6 +17,7 @@ import ListaUsuarios from './components/ListaUsuarios'
 import PoliticaPrivacidad from './components/PoliticaPrivacidad'
 import HeaderInterno from './components/HeaderInterno'
 import Confirmacion from './components/Confirmacion'
+import InicioGeneral from './components/InicioGeneral'
 
 
 
@@ -121,7 +122,8 @@ const App = () => {
                 <Route path='/' element={<Acceso />} />
                 <Route path='/Acceso' element={<Acceso />} />
                 
-                <Route path='/InicioEmpleado' element={<InicioEmpleado />} />
+                <Route path='/InicioGeneral' element={<InicioGeneral />} />
+                <Route path='/InicioReparto' element={<InicioReparto />} />
                 <Route path='/InicioAdmin' element={<InicioAdmin />} />
                 <Route path='/TareasFinalizadas' element={<TareasFinalizadas />} />
                 <Route path='/TareasPendientes' element={<TareasPendientes />} />
@@ -129,6 +131,7 @@ const App = () => {
                 <Route path='/NuevoEmpleado' element={<NuevoEmpleado usuario={usuarios.find((usuario) => usuario.key == usuarioEdicion)} />} />
                 <Route path='/ListaUsuarios' element={<ListaUsuarios usuarios={usuarios} setUsuarioEdicion={editaUsuario}/>} />
                 <Route path='/Confirmacion' element={<Confirmacion />} />
+
 
             </Routes>
             <Footer />

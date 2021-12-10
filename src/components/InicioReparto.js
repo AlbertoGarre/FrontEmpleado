@@ -1,7 +1,10 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
-const InicioEmpleado = () => {
-    
+const InicioReparto = ({usuario}) => {
+
+    const navigate = useNavigate();
+
     return (
         <div id="content" className=" m-0 p-4" style={{width: '100%'}}>
             <br/>
@@ -11,7 +14,7 @@ const InicioEmpleado = () => {
                 <div className="card">
                     <div className="card-header" id="headingOne">
                         <h5 className="mb-0 d-flex justify-content-center">
-                            <button className="btn btn-link "  data-target="">
+                            <button className="btn btn-link "  data-target="" onClick={()=> navigate('/TareasPendientes')}>
                                 TAREAS FINALIZADAS
                             </button>
                         </h5>
@@ -21,7 +24,7 @@ const InicioEmpleado = () => {
                 <div className="card">
                     <div className="card-header" id="headingTwo">
                         <h5 className="mb-0 d-flex justify-content-center">
-                            <button className="btn btn-link "  data-target="">
+                            <button className="btn btn-link onClick="  data-target="" onClick={()=> navigate('/TareasPendientes')}>
                                 TAREAS PENDIENTES
                             </button>
                         </h5>
@@ -31,7 +34,7 @@ const InicioEmpleado = () => {
                 <div className="card">
                     <div className="card-header" id="headingThree">
                         <h5 className="mb-0 d-flex justify-content-center">
-                            <button className="btn btn-link "  data-target="">
+                            <button className="btn btn-link "  data-target="" onClick={()=> navigate('/AsignacionTareas')}>
                                 ASIGNACIÓN DE TAREAS
                             </button>
                         </h5>
@@ -43,4 +46,4 @@ const InicioEmpleado = () => {
     )
 }
 
-export default InicioEmpleado
+export default InicioReparto
