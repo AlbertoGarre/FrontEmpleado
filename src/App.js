@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Footer from './components/Footer'
 import HeaderCliente from './components/HeaderCliente'
@@ -20,76 +20,12 @@ import InicioGeneral from './components/InicioGeneral'
 import ListaTareas from './components/ListaTareas'
 
 
-
-
 const App = () => {
 
     const [usuarioEdicion, setUsuarioEdicion] = useState(0)
-    
-    const editaUsuario = (key) => {
-        setUsuarioEdicion(key)
-        console.log(usuarioEdicion)
-    }
-    
-
-    const [usuarios, setUsuarios] = useState([
-        {
-            key: 1,
-            nombre: "Alberto",
-            apellidos: "Garcia",
-            email: "alberto.garre@contosox.com",
-            telefono: "641987666",
-            usuario: "alga",
-            contraseña: "1234",
-            franquicia: 1,
-            roles: ["Reparto", "Oficina", "Admin"]
-        },
-        {
-            key: 2,
-            nombre: "Ana",
-            apellidos: "Gil",
-            email: "ana.gil@gmail.com",
-            telefono: "611333666",
-            usuario: "gili",
-            contraseña: "2341",
-            franquicia: 1,
-            roles: ["Oficina"]
-        },
-        {
-            key: 3,
-            nombre: "Juan",
-            apellidos: "Hernandez",
-            email: "juan.hernandez@gmail.com",
-            telefono: "611050577",
-            usuario: "heri",
-            contraseña: "2211",
-            franquicia: 1,
-            roles: ["Reparto"]
-        },
-        {
-            key: 4,
-            nombre: "Paco",
-            apellidos: "Pérez",
-            email: "paco.perez@gmail.com",
-            telefono: "611010199",
-            usuario: "pape",
-            contraseña: "2112",
-            franquicia: 1,
-            roles: ["Reparto"]
-        }
-    ])
-
+    const [usuarios, setUsuarios] = useState([])
     const [codigoSeguimiento, setCodigoSeguimiento] = useState('')
-
     const [tarifaSeleccionada, setTarifaSeleccionada] = useState(0)
-
-    const seleccionaTarifa = (key) => {
-        //establece el valor del nuevo estado
-        setTarifaSeleccionada(key)
-        //console.log
-        console.log("Tarifa seleccionada: ", tarifaSeleccionada)
-    }
-
     const [tarifas, setTarifas] = useState([
         {
             key: 1,
@@ -111,23 +47,105 @@ const App = () => {
         },
     ])
 
+    const editaUsuario = (key) => {
+        setUsuarioEdicion(key)
+        console.log(usuarioEdicion)
+    }
+
+    useEffect(() => {
+        const getUsuarios = async () => { await fetchUsuarios()}
+        getUsuarios()
+
+        
+        //[] dependency array Si tienes un valor  y queremos que la función useEffect funcione si el valor cambia, pasaremos el valor dentro del array de dependencia [valor]
+    }, [])
+
+    //fetch usuarios 
+    const fetchUsuarios = async () => {
+        const res = await fetch('http://localhost:5000/usuarios')
+        const data = await res.json()
+        console.log(data)
+        //peticion GET de forma predeterminada
+
+        setUsuarios(data)
+    }
+    //fetch usuario (solo 1)
+    const fetchUsuario = async (id) => {
+        const res = await fetch(`http://localhost:5000/usuarios/${id}`)
+        const data = await res.json()
+        console.log(data)
+
+        return data
+    }
+    //borrar usuario
+    const borraUsuario = async (id) => {
+        await fetch(`http:localhost:5000/usuarios/${id}`, {
+            method: 'DELETE'
+        })
+        setUsuarios(usuarios.filter((usuario) => usuario.id !== id))
+    }
+
+    // Añadir usuario
+    const añadeUsuario = async (usuario) => {
+        const res = await fetch('http://localhost:5000/usuarios', {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json',
+            },
+            body: JSON.stringify(usuario),
+        })
+
+        const data = await res.json()
+        setUsuarios([...usuarios, data])
+    }
+    //actualizar usuario
+    const actualizaUsuario = async (usuarioActualizado) => {   
+
+        const res = await fetch(`http://localhost:5000/usuarios/${usuarioActualizado.id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-type': 'application/json',
+            },
+            body: JSON.stringify(usuarioActualizado),
+        })
+
+        //const data = await res.json()
+
+        setUsuarios(
+            usuarios.map((usuario) =>
+                usuario.id === usuarioActualizado.id ? usuarioActualizado : usuario
+            )
+        )
+    }
+
+
+
+    const seleccionaTarifa = (key) => {
+        //establece el valor del nuevo estado
+        setTarifaSeleccionada(key)
+        //console.log
+        console.log("Tarifa seleccionada: ", tarifaSeleccionada)
+    }
+
+
+
 
 
     return (
         <Router>
 
-            <HeaderInterno/>
+            <HeaderInterno />
             <Routes>
 
                 <Route path='/' element={<InicioGeneral />} />
-                
-                <Route path='/TareasFinalizadas' element={<ListaTareas terminada={true}/>} />
-                <Route path='/TareasPendientes' element={<ListaTareas terminada={false}/>} />
+
+                <Route path='/TareasFinalizadas' element={<ListaTareas terminada={true} />} />
+                <Route path='/TareasPendientes' element={<ListaTareas terminada={false} />} />
                 <Route path='/AsignacionTareas' element={<AsignacionTareas />} />
                 <Route path='/NuevoEmpleado' element={<NuevoEmpleado usuario={usuarios.find((usuario) => usuario.key == usuarioEdicion)} />} />
-                <Route path='/ListaUsuarios' element={<ListaUsuarios usuarios={usuarios} setUsuarioEdicion={editaUsuario}/>} />
+                <Route path='/ListaUsuarios' element={<ListaUsuarios usuarios={usuarios} setUsuarioEdicion={editaUsuario} />} />
                 <Route path='/Confirmacion' element={<Confirmacion />} />
-                <Route path='/NuevoEnvio' element={<NuevoEnvio tarifas={tarifas} seleccionaTarifa={seleccionaTarifa} tarifaSeleccionada={tarifaSeleccionada}/>} />
+                <Route path='/NuevoEnvio' element={<NuevoEnvio tarifas={tarifas} seleccionaTarifa={seleccionaTarifa} tarifaSeleccionada={tarifaSeleccionada} />} />
 
 
             </Routes>

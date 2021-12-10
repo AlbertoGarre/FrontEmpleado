@@ -7,6 +7,17 @@ const NuevoEmpleado = ({ usuario }) => {
         usuario = 0
     }
 
+    const añadoNuevoUsuario = (empleado) => {
+        console.log("AÑADO NUEVO USUARIO")
+        console.log(empleado)
+    }
+    const modificoUsuarioExistente = (empleado) => {
+        console.log("MODIFICO UN USUARIO EXISTENTE")
+        console.log(empleado)
+    }
+
+
+
     React.useEffect(() => {
         //consigue ejecutarse en el momento en el que se carga el componente por primera vez
         //así es como consigo mostrar los values & checked y editarlos despues
@@ -36,7 +47,32 @@ const NuevoEmpleado = ({ usuario }) => {
             </div>
             <div className="col-md-8 order-md-1">
                 <h4 className="mb-3">Nuevo empleado</h4>
-                <form className="needs-validation" novalidate>
+                <form className="needs-validation"
+                    onSubmit={(e) => {
+                        e.preventDefault()
+                        const empleado = {
+                            nombre: document.getElementById("nombre").value,
+                            apellidos: document.getElementById("apellidos").value,
+                            email: document.getElementById("email").value,
+                            telefono: document.getElementById("telefono").value,
+                            contraseña: document.getElementById("clave").value,
+                            roles: []
+                        }
+                        if (document.getElementById("checkBoxRolReparto").checked) {
+                            empleado.roles.push("Reparto")
+                        }
+                        if (document.getElementById("checkBoxRolOficina").checked) {
+                            empleado.roles.push("Oficina")
+                        }
+                        if (document.getElementById("checkBoxRolAdmin").checked) {
+                            empleado.roles.push("Admin")
+                        }
+                        setTimeout(() => {
+                            navigate("/ListaUsuarios")
+                        }, 100);
+                        (usuario == 0) ? añadoNuevoUsuario(empleado) : modificoUsuarioExistente(empleado)
+                        return false
+                    }}>
                     <div className="row">
                         <div className="col-md-6 mb-3">
                             <label htmlFor="nombre">Nombre</label>
@@ -85,7 +121,7 @@ const NuevoEmpleado = ({ usuario }) => {
                         <label htmlFor="checkBoxRolAdmin"> Admin</label><br />
                     </div>
                     <hr className="mb-4" />
-                    <button className="btn btn-success btn-block col-3 col-sm-4 ml-3 ml-sm-3" type="submit" onClick={() => navigate('/ListaUsuarios')}>Confirmar empleado</button>
+                    <button className="btn btn-success btn-block col-3 col-sm-4 ml-3 ml-sm-3" type="submit">Confirmar empleado</button>
                 </form>
             </div>
         </div>
