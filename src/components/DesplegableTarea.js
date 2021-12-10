@@ -1,6 +1,9 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const DesplegableTarea = ({tarea}) => {
+
+    const navigate = useNavigate();
 
     return (
 
@@ -58,7 +61,7 @@ const DesplegableTarea = ({tarea}) => {
                         <a >{tarea.observaciones}</a>
                     </div>
                     <br />
-                    <button type="submit" className="btn btn-success col-md-4 m-0 p-2 px-4 bg-success" style={tarea.terminada ? {visibility: "hidden"} : {}}>{tarea.tipo == 'entrega' ? 'Entrega': 'Recoge'}</button>
+                    <button type="submit" onClick={()=> navigate('/Confirmacion')} className="btn btn-success col-md-4 m-0 p-2 px-4 bg-success" style={tarea.terminada ? {visibility: "hidden"} : {}}>{tarea.tipo == 'entrega' ? 'Entrega': 'Recoge'}</button>
                     <br />
                 </div>
             </div>
