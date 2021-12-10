@@ -82,6 +82,15 @@ const App = () => {
 
     const [codigoSeguimiento, setCodigoSeguimiento] = useState('')
 
+    const [tarifaSeleccionada, setTarifaSeleccionada] = useState(0)
+
+    const seleccionaTarifa = (key) => {
+        //establece el valor del nuevo estado
+        setTarifaSeleccionada(key)
+        //console.log
+        console.log("Tarifa seleccionada: ", tarifaSeleccionada)
+    }
+
     const [tarifas, setTarifas] = useState([
         {
             key: 1,
@@ -103,15 +112,6 @@ const App = () => {
         },
     ])
 
-    const [tarifaSeleccionada, setTarifaSeleccionada] = useState(0)
-
-    const pulsa = (key) => {
-        //establece el valor del nuevo estado
-        setTarifaSeleccionada(key)
-        //console.log
-        console.log("Tarifa seleccionada: ", tarifaSeleccionada)
-    }
-
 
 
     return (
@@ -132,6 +132,7 @@ const App = () => {
                 <Route path='/NuevoEmpleado' element={<NuevoEmpleado usuario={usuarios.find((usuario) => usuario.key == usuarioEdicion)} />} />
                 <Route path='/ListaUsuarios' element={<ListaUsuarios usuarios={usuarios} setUsuarioEdicion={editaUsuario}/>} />
                 <Route path='/Confirmacion' element={<Confirmacion />} />
+                <Route path='/NuevoEnvio' element={<NuevoEnvio tarifas={tarifas} seleccionaTarifa={seleccionaTarifa} tarifaSeleccionada={tarifaSeleccionada}/>} />
 
 
             </Routes>
