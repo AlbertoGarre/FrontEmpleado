@@ -16,16 +16,16 @@ const Footer = () => {
                             </div>
                             <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                                 <h6 className="text-uppercase fw-bold mb-4">
-                                    Products
+                                    Productos
                                 </h6>
                                 <p>
-                                    <a href="#!" className="text-reset">Angular</a>
+                                    <a href="#!" className="text-reset">Bootstrap</a>
                                 </p>
                                 <p>
                                     <a href="#!" className="text-reset">React</a>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset">Vue</a>
+                                    <a href="#!" className="text-reset">Mysql</a>
                                 </p>
                                 <p>
                                     <a href="#!" className="text-reset">Laravel</a>
@@ -33,25 +33,25 @@ const Footer = () => {
                             </div>
                             <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                                 <h6 className="text-uppercase fw-bold mb-4">
-                                    Useful links
+                                    Utilidades
                                 </h6>
                                 <p>
-                                    <a href="#!" className="text-reset">Pricing</a>
+                                    <a href="#!" className="text-reset">Tarifas</a>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset">Settings</a>
+                                    <a href="#!" className="text-reset">Opciones</a>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset">Orders</a>
+                                    <a href="#!" className="text-reset">Pedidos</a>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset">Help</a>
+                                    <a href="#!" className="text-reset">Ayuda</a>
                                 </p>
                             </div>
                             <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
 
                                 <h6 className="text-uppercase fw-bold mb-4">
-                                    Contact
+                                    Contacto
                                 </h6>
                                 <p><i className="fas fa-home me-3"></i> España, Murcia 30004</p>
                                 <p>

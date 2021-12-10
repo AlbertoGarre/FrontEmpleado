@@ -1,6 +1,10 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const Confirmacion = () => {
+
+    const navigate = useNavigate();
+
     return (
         <div id="content" className=" m-0 p-4" style={{width: "100%"}}>
             <br/><br/><br/>
@@ -34,8 +38,8 @@ const Confirmacion = () => {
 
                         <hr className="mb-4"/>
                         <div className="row d-flex justify-content-between">
-                        <button className="btn btn-warning btn-lg col-5 col-sm-4 m-2 ml-sm-3" type="submit">Incidencia</button>
-                        <button className ="btn btn-success btn-lg col-5 col-sm-4 m-2 ml-sm-3" type ="submit">Confirmar</button>
+                        <button className="btn btn-warning btn-lg col-5 col-sm-4 m-2 ml-sm-3" type="submit" onClick={()=> navigate('/TareasPendientes')}>Incidencia</button>
+                        <button className ="btn btn-success btn-lg col-5 col-sm-4 m-2 ml-sm-3" type ="submit" onClick={()=> navigate('/TareasPendientes')}>Confirmar</button>
                         </div>
                     </form>
                     
