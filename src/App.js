@@ -18,6 +18,7 @@ import PoliticaPrivacidad from './components/PoliticaPrivacidad'
 import HeaderInterno from './components/HeaderInterno'
 import Confirmacion from './components/Confirmacion'
 import InicioGeneral from './components/InicioGeneral'
+import ListaTareas from './components/ListaTareas'
 
 
 
@@ -125,8 +126,8 @@ const App = () => {
                 <Route path='/InicioGeneral' element={<InicioGeneral />} />
                 <Route path='/InicioReparto' element={<InicioReparto />} />
                 <Route path='/InicioAdmin' element={<InicioAdmin />} />
-                <Route path='/TareasFinalizadas' element={<TareasFinalizadas />} />
-                <Route path='/TareasPendientes' element={<TareasPendientes />} />
+                <Route path='/TareasFinalizadas' element={<ListaTareas terminada={true}/>} />
+                <Route path='/TareasPendientes' element={<ListaTareas terminada={false}/>} />
                 <Route path='/AsignacionTareas' element={<AsignacionTareas />} />
                 <Route path='/NuevoEmpleado' element={<NuevoEmpleado usuario={usuarios.find((usuario) => usuario.key == usuarioEdicion)} />} />
                 <Route path='/ListaUsuarios' element={<ListaUsuarios usuarios={usuarios} setUsuarioEdicion={editaUsuario}/>} />

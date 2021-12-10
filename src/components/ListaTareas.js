@@ -1,7 +1,7 @@
 import React from 'react'
 import DesplegableTarea from './DesplegableTarea'
 
-const ListaTareas = () => {
+const ListaTareas = ({terminada}) => {
 
     const tareas = [
         {
@@ -71,11 +71,13 @@ const ListaTareas = () => {
             <br /><br /><br />
             <div id="accordion">
 
-                {tareas.map((tarea) => (
-                    <DesplegableTarea
-                        tarea={tarea}
-                    />
-                ))}
+                {tareas
+                    .filter((tarea) => tarea.terminada == terminada)
+                    .map((tarea) => (
+                        <DesplegableTarea
+                            tarea={tarea}
+                        />
+                    ))}
             </div>
         </div>
     )

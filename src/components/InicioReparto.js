@@ -14,7 +14,7 @@ const InicioReparto = ({usuario}) => {
                 <div className="card">
                     <div className="card-header" id="headingOne">
                         <h5 className="mb-0 d-flex justify-content-center">
-                            <button className="btn btn-link "  data-target="" onClick={()=> navigate('/TareasPendientes')}>
+                            <button className="btn btn-link "  data-target="" onClick={()=> navigate('/TareasFinalizadas')}>
                                 TAREAS FINALIZADAS
                             </button>
                         </h5>
