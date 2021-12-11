@@ -30,6 +30,69 @@ const App = () => {
     const [tarifaSeleccionada, setTarifaSeleccionada] = useState(0)
     const [tarifas, setTarifas] = useState([])
 
+    const tareas = [
+        {
+            id: 1,
+            tipo: "entrega",
+            provincia: "Murcia",
+            municipio: "Murcia",
+            cp: "30007",
+            direccion: "Avenida Abenarabi ",
+            numero: "4",
+            escalera: "2",
+            planta: "4",
+            puerta: "A",
+            nombre: "roberto",
+            apellidos: "Garcia Muñoz",
+            telefono: "600123456",
+            bultos: "5",
+            observaciones: "Rápido",
+            tarifa: "1",
+            horario: "20:00",
+            terminada: true,
+        },
+        {
+            id: 2,
+            tipo: "recogida",
+            provincia: "Murcia",
+            municipio: "Murcia",
+            cp: "30100",
+            direccion: "Camino del Carcanox",
+            numero: "3",
+            escalera: "",
+            planta: "",
+            puerta: "",
+            nombre: "Jose Antonio",
+            apellidos: "Gutierrez",
+            telefono: "968123123",
+            bultos: "1",
+            observaciones: "",
+            tarifa: "3",
+            horario: "10:00",
+            terminada: false,
+        },
+        {
+            id: 3,
+            tipo: "entrega",
+            provincia: "Murcia",
+            municipio: "Murcia",
+            cp: "30020",
+            direccion: "Calle Mayor",
+            numero: "29",
+            escalera: "",
+            planta: "3",
+            puerta: "B",
+            nombre: "Ana",
+            apellidos: "Marín",
+            telefono: "648987987",
+            bultos: "2",
+            observaciones: "Entregar por la mañana",
+            tarifa: "2",
+            horario: "20:00",
+            terminada: false,
+        },
+    ]
+
     //establece que tarifa vamos a contratar
     //es un estado que se guarda en FRONTEND, no en el servidor
     const seleccionaTarifa = (id) => {
@@ -132,8 +195,8 @@ const App = () => {
 
                 <Route path='/' element={<InicioGeneral />} />
 
-                <Route path='/TareasFinalizadas' element={<ListaTareas terminada={true} />} />
-                <Route path='/TareasPendientes' element={<ListaTareas terminada={false} />} />
+                <Route path='/TareasFinalizadas' element={<ListaTareas terminada={true} tareas={tareas}/>} />
+                <Route path='/TareasPendientes' element={<ListaTareas terminada={false} tareas={tareas}/>} />
                 <Route path='/AsignacionTareas' element={<AsignacionTareas />} />
                 <Route path='/NuevoUsuario' element={<NuevoUsuario usuario={usuarios.find((usuario) => usuario.id == usuarioEdicion)} añadeUsuario={añadeUsuario} actualizaUsuario={actualizaUsuario} />} />
                 <Route path='/ListaUsuarios' element={<ListaUsuarios usuarios={usuarios} setUsuarioEdicion={editaUsuario} borraUsuario={borraUsuario} />} />
