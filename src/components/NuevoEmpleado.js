@@ -35,7 +35,7 @@ const NuevoEmpleado = ({ usuario, añadeUsuario, actualizaUsuario }) => {
                 <br /><br /><br />
             </div>
             <div className="col-md-8 order-md-1">
-                <h4 className="mb-3">Nuevo empleado</h4>
+                <h4 className="mb-3">{usuario != 0 ? "Edita empleado" : "Nuevo empleado"}</h4>
                 <form className="needs-validation"
                     onSubmit={(e) => {
                         e.preventDefault()
@@ -113,7 +113,7 @@ const NuevoEmpleado = ({ usuario, añadeUsuario, actualizaUsuario }) => {
                         <label htmlFor="checkBoxRolAdmin"> Admin</label><br />
                     </div>
                     <hr className="mb-4" />
-                    <button className="btn btn-success btn-block col-3 col-sm-4 ml-3 ml-sm-3" type="submit">Confirmar empleado</button>
+                    <button className="btn btn-success btn-block col-3 col-sm-4 ml-3 ml-sm-3" type="submit">{usuario != 0 ? "Confirmar cambios" : "Crear"}</button>
                 </form>
             </div>
         </div>
