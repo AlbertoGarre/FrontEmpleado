@@ -11,7 +11,7 @@ import InicioAdmin from './components/InicioAdmin'
 import TareasFinalizadas from './components/ListaTareas'
 import TareasPendientes from './components/TareasPendientes'
 import AsignacionTareas from './components/AsignacionTareas'
-import NuevoEmpleado from './components/NuevoEmpleado'
+import NuevoUsuario from './components/NuevoUsuario'
 import ListaUsuarios from './components/ListaUsuarios'
 import PoliticaPrivacidad from './components/PoliticaPrivacidad'
 import HeaderInterno from './components/HeaderInterno'
@@ -152,7 +152,7 @@ const App = () => {
                 <Route path='/TareasFinalizadas' element={<ListaTareas terminada={true} />} />
                 <Route path='/TareasPendientes' element={<ListaTareas terminada={false} />} />
                 <Route path='/AsignacionTareas' element={<AsignacionTareas />} />
-                <Route path='/NuevoEmpleado' element={<NuevoEmpleado usuario={usuarios.find((usuario) => usuario.id == usuarioEdicion)} añadeUsuario={añadeUsuario} actualizaUsuario={actualizaUsuario} />} />
+                <Route path='/NuevoUsuario' element={<NuevoUsuario usuario={usuarios.find((usuario) => usuario.id == usuarioEdicion)} añadeUsuario={añadeUsuario} actualizaUsuario={actualizaUsuario} />} />
                 <Route path='/ListaUsuarios' element={<ListaUsuarios usuarios={usuarios} setUsuarioEdicion={editaUsuario} />} />
                 <Route path='/Confirmacion' element={<Confirmacion />} />
                 <Route path='/NuevoEnvio' element={<NuevoEnvio tarifas={tarifas} seleccionaTarifa={seleccionaTarifa} tarifaSeleccionada={tarifaSeleccionada} />} />

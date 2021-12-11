@@ -8,7 +8,7 @@ const ListaUsuarios = ({usuarios, setUsuarioEdicion}) => {
    
     const setUsuarioEdicionYRedirige = (id) => {
         setUsuarioEdicion(id)
-        navigate('/NuevoEmpleado')
+        navigate('/NuevoUsuario')
         
     }
     

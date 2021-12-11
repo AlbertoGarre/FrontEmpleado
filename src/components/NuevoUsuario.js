@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 
-const NuevoEmpleado = ({ usuario, añadeUsuario, actualizaUsuario }) => {
+const NuevoUsuario = ({ usuario, añadeUsuario, actualizaUsuario }) => {
 
     if (usuario == null) {
         usuario = 0
@@ -120,4 +120,4 @@ const NuevoEmpleado = ({ usuario, añadeUsuario, actualizaUsuario }) => {
     )
 }
 
-export default NuevoEmpleado
+export default NuevoUsuario
