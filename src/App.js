@@ -47,27 +47,29 @@ const App = () => {
         },
     ])
 
-
-    const editaUsuario = (id) => {
-        setUsuarioEdicion(id)
-        console.log(usuarioEdicion)
+    //establece que tarifa vamos a contratar
+    //es un estado que se guarda en FRONTEND, no en el servidor
+    const seleccionaTarifa = (id) => {
+        //establece el valor del nuevo estado
+        setTarifaSeleccionada(id)
     }
 
-    useEffect(() => {
-        const getUsuarios = async () => { await fetchUsuarios() }
-        getUsuarios()
+    //establece que usuario vamos a editar
+    //es un estado que se guarda en FRONTEND, no en el servidor
+    const editaUsuario = (id) => {
+        //establece el valor del nuevo estado
+        setUsuarioEdicion(id)
+    }
+
+    
 
 
-        //[] dependency array Si tienes un valor  y queremos que la función useEffect funcione si el valor cambia, pasaremos el valor dentro del array de dependencia [valor]
-    }, [])
-
+    ////////////////////////////USUARIOS////////////////////////////////////////////////////////
     //GET
     //fetch usuario (solo 1)
     const fetchUsuario = async (id) => {
         const res = await fetch(`http://localhost:5000/usuarios/${id}`)
         const data = await res.json()
-        console.log(data)
-
         return data
     }
 
@@ -112,24 +114,20 @@ const App = () => {
             },
             body: JSON.stringify(usuarioActualizado),
         })
-        setUsuarios(
-            usuarios.map((usuario) =>
-                usuario.id === usuarioActualizado.id ? usuarioActualizado : usuario
-            )
-        )
+        fetchUsuarios()
     }
 
 
 
-    const seleccionaTarifa = (id) => {
-        //establece el valor del nuevo estado
-        setTarifaSeleccionada(id)
-        //console.log
-        console.log("Tarifa seleccionada: ", tarifaSeleccionada)
-    }
+    
 
 
+    useEffect(() => {
+        const getUsuarios = async () => { await fetchUsuarios() }
+        getUsuarios()
 
+        //[] dependency array Si tienes un valor  y queremos que la función useEffect funcione si el valor cambia, pasaremos el valor dentro del array de dependencia [valor]
+    }, [])
 
 
     return (

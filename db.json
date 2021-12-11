@@ -153,16 +153,16 @@
     },
     {
       "id": 5,
-      "nombre": "Ramon",
+      "usuario": "rame",
+      "franquicia": 1,
+      "nombre": "Ramona",
       "apellidos": "Heredia",
       "email": "ramon.heredia@gmail.com",
       "telefono": "611010199",
-      "usuario": "rame",
-      "contraseña": "1314",
+      "contraseña": "Ramon",
       "roles": [
         "Reparto"
-      ],
-      "franquicia": 1
+      ]
     },
     {
       "id": 6,
