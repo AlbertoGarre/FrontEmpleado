@@ -5,7 +5,7 @@ const ListaTareas = ({terminada}) => {
 
     const tareas = [
         {
-            key: 1,
+            id: 1,
             tipo: "entrega",
             provincia: "Murcia",
             municipio: "Murcia",
@@ -25,7 +25,7 @@ const ListaTareas = ({terminada}) => {
             terminada: true,
         },
         {
-            key: 2,
+            id: 2,
             tipo: "recogida",
             provincia: "Murcia",
             municipio: "Murcia",
@@ -45,7 +45,7 @@ const ListaTareas = ({terminada}) => {
             terminada: false,
         },
         {
-            key: 3,
+            id: 3,
             tipo: "entrega",
             provincia: "Murcia",
             municipio: "Murcia",

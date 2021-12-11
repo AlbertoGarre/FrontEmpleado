@@ -1,252 +1,264 @@
 {
-    "tarifas": [
-        {
-            "key": 1,
-            "titulo": "Económica",
-            "Precio": "5 €",
-            "Cualidades": [
-                "Hasta 1 kg de peso",
-                "Volumen inferior a 30x20x10 cm",
-                "Entrega antes de 48 horas",
-                "El mejor servicio"
-            ]
-        },
-        {
-            "key": 2,
-            "titulo": "Hogar",
-            "Precio": "15 €",
-            "Cualidades": [
-                "Hasta 7 kg de peso",
-                "Volumen inferior a 50x50x50 cm",
-                "Entrega antes de 48 horas",
-                "El mejor servicio"
-            ]
-        },
-        {
-            "key": 3,
-            "titulo": "Profesional",
-            "Precio": "50 €",
-            "Cualidades": [
-                "Hasta 25 kg de peso",
-                "Volumen transportable por un operario",
-                "Entrega antes de 48 horas",
-                "El mejor servicio"
-            ]
-        }
-    ],
-    "tareas": [
-        {
-            "key": 1,
-            "tipo": "entrega",
-            "provincia": "Murcia",
-            "municipio": "Murcia",
-            "cp": "30007",
-            "direccion": "Avenida Abenarabi ",
-            "numero": "4",
-            "escalera": "2",
-            "planta": "4",
-            "puerta": "A",
-            "nombre": "roberto",
-            "apellidos": "Garcia Muñoz",
-            "telefono": "600123456",
-            "bultos": "5",
-            "observaciones": "Rápido",
-            "tarifa": "1",
-            "horario": "20:00",
-            "terminada": true
-        },
-        {
-            "key": 2,
-            "tipo": "recogida",
-            "provincia": "Murcia",
-            "municipio": "Murcia",
-            "cp": "30100",
-            "direccion": "Camino del Carcanox",
-            "numero": "3",
-            "escalera": "",
-            "planta": "",
-            "puerta": "",
-            "nombre": "Jose Antonio",
-            "apellidos": "Gutierrez",
-            "telefono": "968123123",
-            "bultos": "1",
-            "observaciones": "",
-            "tarifa": "3",
-            "horario": "10:00",
-            "terminada": false
-        },
-        {
-            "key": 3,
-            "tipo": "entrega",
-            "provincia": "Murcia",
-            "municipio": "Murcia",
-            "cp": "30020",
-            "direccion": "Calle Mayor",
-            "numero": "29",
-            "escalera": "",
-            "planta": "3",
-            "puerta": "B",
-            "nombre": "Ana",
-            "apellidos": "Marín",
-            "telefono": "648987987",
-            "bultos": "2",
-            "observaciones": "Entregar por la mañana",
-            "tarifa": "2",
-            "horario": "20:00",
-            "terminada": false
-        }
-    ],
-    "usuarios": [
-        {
-            "key": 1,
-            "nombre": "Alberto",
-            "apellidos": "Garcia",
-            "email": "alberto.garcia@contosox.com",
-            "telefono": "641987666",
-            "usuario": "alga",
-            "contraseña": "1234",
-            "roles": [
-                "Reparto",
-                "Oficina",
-                "Admin"
-            ],
-            "franquicia": 1
-        },
-        {
-            "key": 2,
-            "nombre": "Ana",
-            "apellidos": "Gil",
-            "email": "ana.gil@gmail.com",
-            "telefono": "611333666",
-            "usuario": "gili",
-            "contraseña": "2341",
-            "roles": [
-                "Oficina"
-            ],
-            "franquicia": 1
-        },
-        {
-            "key": 3,
-            "nombre": "Juan",
-            "apellidos": "Hernandez",
-            "email": "juan.hernandez@gmail.com",
-            "telefono": "611050577",
-            "usuario": "heri",
-            "contraseña": "2211",
-            "roles": [
-                "Reparto"
-            ],
-            "franquicia": 1
-
-        },
-        {
-            "key": 4,
-            "nombre": "Paco",
-            "apellidos": "Pérez",
-            "email": "paco.perez@gmail.com",
-            "telefono": "611010199",
-            "usuario": "pape",
-            "contraseña": "2112",
-            "roles": [
-                "Reparto"
-            ],
-            "franquicia": 1
-        },
-        {
-            "key": 5,
-            "nombre": "Ramon",
-            "apellidos": "Heredia",
-            "email": "ramon.heredia@gmail.com",
-            "telefono": "611010199",
-            "usuario": "rame",
-            "contraseña": "1314",
-            "roles": [
-                "Reparto"
-            ],
-            "franquicia": 1
-        }
-    ],
-    "localizaciones": [
-        {
-            "key": 1,
-            "nombre": "Central Logística Madrid"
-        },
-        {
-            "key": 2,
-            "nombre": "Central Logística Murcia"
-        },
-        {
-            "key": 3,
-            "nombre": "Central Logística Alicante"
-        },
-        {
-            "key": 4,
-            "nombre": "Central Logística Valencia"
-        },
-        {
-            "key": 5,
-            "nombre": "Central Logística Zaragoza"
-        },
-        {
-            "key": 6,
-            "nombre": "Central Logística Almería"
-        },
-        {
-            "key": 7,
-            "nombre": "Central Logística Málaga"
-        },
-        {
-            "key": 8,
-            "nombre": "Central Logística Granada"
-        },
-        {
-            "key": 9,
-            "nombre": "Central Logística Sevilla"
-        },
-        {
-            "key": 10,
-            "nombre": "En oficina de destino"
-        },
-        {
-            "key": 11,
-            "nombre": "En reparto"
-        },
-        {
-            "key": 1,
-            "nombre": "Central Logística Madrid"
-        },
-        {
-            "key": 1,
-            "nombre": "Central Logística Madrid"
-        }
-    ],
-    "franquicias": [
-        {
-            "key": 1,
-            "direccion": "camino del carcanox 3, 30001, Murcia, Murcia",
-            "cp": [
-                "30001",
-                "30002",
-                "30003"
-            ]
-        },
-        {
-            "key": 2,
-            "direccion": "avenida del madrid 3, 30201, Alicante, Alicante",
-            "cp": [
-                "03001",
-                "03002",
-                "03003"
-            ]
-        },
-        {
-            "key": 3,
-            "direccion": "calle del granada 3, Orihuela, Alicante",
-            "cp": [
-                "03301",
-                "03302",
-                "03303"
-            ]
-        }
-    ]
+  "tarifas": [
+    {
+      "id": 1,
+      "titulo": "Económica",
+      "Precio": "5 €",
+      "Cualidades": [
+        "Hasta 1 kg de peso",
+        "Volumen inferior a 30x20x10 cm",
+        "Entrega antes de 48 horas",
+        "El mejor servicio"
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "Hogar",
+      "Precio": "15 €",
+      "Cualidades": [
+        "Hasta 7 kg de peso",
+        "Volumen inferior a 50x50x50 cm",
+        "Entrega antes de 48 horas",
+        "El mejor servicio"
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "Profesional",
+      "Precio": "50 €",
+      "Cualidades": [
+        "Hasta 25 kg de peso",
+        "Volumen transportable por un operario",
+        "Entrega antes de 48 horas",
+        "El mejor servicio"
+      ]
+    }
+  ],
+  "tareas": [
+    {
+      "id": 1,
+      "tipo": "entrega",
+      "provincia": "Murcia",
+      "municipio": "Murcia",
+      "cp": "30007",
+      "direccion": "Avenida Abenarabi ",
+      "numero": "4",
+      "escalera": "2",
+      "planta": "4",
+      "puerta": "A",
+      "nombre": "roberto",
+      "apellidos": "Garcia Muñoz",
+      "telefono": "600123456",
+      "bultos": "5",
+      "observaciones": "Rápido",
+      "tarifa": "1",
+      "horario": "20:00",
+      "terminada": true
+    },
+    {
+      "id": 2,
+      "tipo": "recogida",
+      "provincia": "Murcia",
+      "municipio": "Murcia",
+      "cp": "30100",
+      "direccion": "Camino del Carcanox",
+      "numero": "3",
+      "escalera": "",
+      "planta": "",
+      "puerta": "",
+      "nombre": "Jose Antonio",
+      "apellidos": "Gutierrez",
+      "telefono": "968123123",
+      "bultos": "1",
+      "observaciones": "",
+      "tarifa": "3",
+      "horario": "10:00",
+      "terminada": false
+    },
+    {
+      "id": 3,
+      "tipo": "entrega",
+      "provincia": "Murcia",
+      "municipio": "Murcia",
+      "cp": "30020",
+      "direccion": "Calle Mayor",
+      "numero": "29",
+      "escalera": "",
+      "planta": "3",
+      "puerta": "B",
+      "nombre": "Ana",
+      "apellidos": "Marín",
+      "telefono": "648987987",
+      "bultos": "2",
+      "observaciones": "Entregar por la mañana",
+      "tarifa": "2",
+      "horario": "20:00",
+      "terminada": false
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Alberto",
+      "apellidos": "Garcia",
+      "email": "alberto.garcia@contosox.com",
+      "telefono": "641987666",
+      "usuario": "alga",
+      "contraseña": "1234",
+      "roles": [
+        "Reparto",
+        "Oficina",
+        "Admin"
+      ],
+      "franquicia": 1
+    },
+    {
+      "id": 2,
+      "nombre": "Ana",
+      "apellidos": "Gil",
+      "email": "ana.gil@gmail.com",
+      "telefono": "611333666",
+      "usuario": "gili",
+      "contraseña": "2341",
+      "roles": [
+        "Oficina"
+      ],
+      "franquicia": 1
+    },
+    {
+      "id": 3,
+      "nombre": "Juan",
+      "apellidos": "Hernandez",
+      "email": "juan.hernandez@gmail.com",
+      "telefono": "611050577",
+      "usuario": "heri",
+      "contraseña": "2211",
+      "roles": [
+        "Reparto"
+      ],
+      "franquicia": 1
+    },
+    {
+      "id": 4,
+      "nombre": "Paco",
+      "apellidos": "Pérez",
+      "email": "paco.perez@gmail.com",
+      "telefono": "611010199",
+      "usuario": "pape",
+      "contraseña": "2112",
+      "roles": [
+        "Reparto"
+      ],
+      "franquicia": 1
+    },
+    {
+      "id": 5,
+      "nombre": "Ramon",
+      "apellidos": "Heredia",
+      "email": "ramon.heredia@gmail.com",
+      "telefono": "611010199",
+      "usuario": "rame",
+      "contraseña": "1314",
+      "roles": [
+        "Reparto"
+      ],
+      "franquicia": 1
+    },
+    {
+      "id": 6,
+      "usuario": "as12",
+      "franquicia": 1,
+      "nombre": "asdaa",
+      "apellidos": "123",
+      "email": "a@contosox.com",
+      "telefono": "12",
+      "contraseña": "asd",
+      "roles": [
+        "Reparto"
+      ]
+    }
+  ],
+  "localizaciones": [
+    {
+      "id": 1,
+      "nombre": "Central Logística Madrid"
+    },
+    {
+      "id": 2,
+      "nombre": "Central Logística Murcia"
+    },
+    {
+      "id": 3,
+      "nombre": "Central Logística Alicante"
+    },
+    {
+      "id": 4,
+      "nombre": "Central Logística Valencia"
+    },
+    {
+      "id": 5,
+      "nombre": "Central Logística Zaragoza"
+    },
+    {
+      "id": 6,
+      "nombre": "Central Logística Almería"
+    },
+    {
+      "id": 7,
+      "nombre": "Central Logística Málaga"
+    },
+    {
+      "id": 8,
+      "nombre": "Central Logística Granada"
+    },
+    {
+      "id": 9,
+      "nombre": "Central Logística Sevilla"
+    },
+    {
+      "id": 10,
+      "nombre": "En oficina de destino"
+    },
+    {
+      "id": 11,
+      "nombre": "En reparto"
+    },
+    {
+      "id": 1,
+      "nombre": "Central Logística Madrid"
+    },
+    {
+      "id": 1,
+      "nombre": "Central Logística Madrid"
+    }
+  ],
+  "franquicias": [
+    {
+      "id": 1,
+      "direccion": "camino del carcanox 3, 30001, Murcia, Murcia",
+      "cp": [
+        "30001",
+        "30002",
+        "30003"
+      ]
+    },
+    {
+      "id": 2,
+      "direccion": "avenida del madrid 3, 30201, Alicante, Alicante",
+      "cp": [
+        "03001",
+        "03002",
+        "03003"
+      ]
+    },
+    {
+      "id": 3,
+      "direccion": "calle del granada 3, Orihuela, Alicante",
+      "cp": [
+        "03301",
+        "03302",
+        "03303"
+      ]
+    }
+  ]
 }

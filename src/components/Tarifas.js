@@ -7,15 +7,15 @@ const Tarifas = ({ tarifas, pulsa, tarifaSeleccionada }) => {
 
     const navigate = useNavigate();
 
-    const pulsaYRedirige = (key) => {
-        pulsa(key)
+    const pulsaYRedirige = (id) => {
+        pulsa(id)
         setTimeout(() => {
             navigate('/NuevoEnvio')
         }, 1000);
     }
 
     return (
-        <div key="content" className=" m-0 p-4" style={{ width: "100%" }}>
+        <div id="content" className=" m-0 p-4" style={{ width: "100%" }}>
             <br /> <br />
             <div className="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
                 <h1 className="display-4">Tarifas</h1>
@@ -25,7 +25,7 @@ const Tarifas = ({ tarifas, pulsa, tarifaSeleccionada }) => {
                 <div className="card-deck mb-3 text-center">
                     {tarifas.map((tarifa) => (
                         <TarjetaTarifa
-                            seleccionada={tarifaSeleccionada == tarifa.key}
+                            seleccionada={tarifaSeleccionada == tarifa.id}
                             tarifa={tarifa}
                             pulsa={pulsaYRedirige} />
                     ))}

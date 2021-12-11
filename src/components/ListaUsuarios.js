@@ -6,8 +6,8 @@ const ListaUsuarios = ({usuarios, setUsuarioEdicion}) => {
 
     const navigate = useNavigate();
    
-    const setUsuarioEdicionYRedirige = (key) => {
-        setUsuarioEdicion(key)
+    const setUsuarioEdicionYRedirige = (id) => {
+        setUsuarioEdicion(id)
         navigate('/NuevoEmpleado')
         
     }

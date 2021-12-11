@@ -28,35 +28,36 @@ const App = () => {
     const [tarifaSeleccionada, setTarifaSeleccionada] = useState(0)
     const [tarifas, setTarifas] = useState([
         {
-            key: 1,
+            id: 1,
             titulo: "Económica",
             Precio: "5 €",
             Cualidades: ["Hasta 1 kg de peso", "Volumen inferior a 30x20x10 cm", "Entrega antes de 48 horas", "El mejor servicio"],
         },
         {
-            key: 2,
+            id: 2,
             titulo: "Hogar",
             Precio: "15 €",
             Cualidades: ["Hasta 7 kg de peso", "Volumen inferior a 50x50x50 cm", "Entrega antes de 48 horas", "El mejor servicio"],
         },
         {
-            key: 3,
+            id: 3,
             titulo: "Profesional",
             Precio: "50 €",
             Cualidades: ["Hasta 25 kg de peso", "Volumen transportable por un operario", "Entrega antes de 48 horas", "El mejor servicio"],
         },
     ])
 
-    const editaUsuario = (key) => {
-        setUsuarioEdicion(key)
+
+    const editaUsuario = (id) => {
+        setUsuarioEdicion(id)
         console.log(usuarioEdicion)
     }
 
     useEffect(() => {
-        const getUsuarios = async () => { await fetchUsuarios()}
+        const getUsuarios = async () => { await fetchUsuarios() }
         getUsuarios()
 
-        
+
         //[] dependency array Si tienes un valor  y queremos que la función useEffect funcione si el valor cambia, pasaremos el valor dentro del array de dependencia [valor]
     }, [])
 
@@ -87,6 +88,8 @@ const App = () => {
 
     // Añadir usuario
     const añadeUsuario = async (usuario) => {
+        console.log("funcion añade usuario ")
+        console.log(usuario)
         const res = await fetch('http://localhost:5000/usuarios', {
             method: 'POST',
             headers: {
@@ -94,12 +97,18 @@ const App = () => {
             },
             body: JSON.stringify(usuario),
         })
+        console.log(res)
+        //const data = await res.json()
+        //console.log(data)
+        //setUsuarios([...usuarios, data])
+        fetchUsuarios()
 
-        const data = await res.json()
-        setUsuarios([...usuarios, data])
+        console.log(usuarios)
+
+        
     }
     //actualizar usuario
-    const actualizaUsuario = async (usuarioActualizado) => {   
+    const actualizaUsuario = async (usuarioActualizado) => {
 
         const res = await fetch(`http://localhost:5000/usuarios/${usuarioActualizado.id}`, {
             method: 'PUT',
@@ -116,13 +125,14 @@ const App = () => {
                 usuario.id === usuarioActualizado.id ? usuarioActualizado : usuario
             )
         )
+        console.log("funcion actualiza usuario ")
     }
 
 
 
-    const seleccionaTarifa = (key) => {
+    const seleccionaTarifa = (id) => {
         //establece el valor del nuevo estado
-        setTarifaSeleccionada(key)
+        setTarifaSeleccionada(id)
         //console.log
         console.log("Tarifa seleccionada: ", tarifaSeleccionada)
     }
@@ -142,7 +152,7 @@ const App = () => {
                 <Route path='/TareasFinalizadas' element={<ListaTareas terminada={true} />} />
                 <Route path='/TareasPendientes' element={<ListaTareas terminada={false} />} />
                 <Route path='/AsignacionTareas' element={<AsignacionTareas />} />
-                <Route path='/NuevoEmpleado' element={<NuevoEmpleado usuario={usuarios.find((usuario) => usuario.key == usuarioEdicion)} />} />
+                <Route path='/NuevoEmpleado' element={<NuevoEmpleado usuario={usuarios.find((usuario) => usuario.id == usuarioEdicion)} añadeUsuario={añadeUsuario} actualizaUsuario={actualizaUsuario} />} />
                 <Route path='/ListaUsuarios' element={<ListaUsuarios usuarios={usuarios} setUsuarioEdicion={editaUsuario} />} />
                 <Route path='/Confirmacion' element={<Confirmacion />} />
                 <Route path='/NuevoEnvio' element={<NuevoEnvio tarifas={tarifas} seleccionaTarifa={seleccionaTarifa} tarifaSeleccionada={tarifaSeleccionada} />} />

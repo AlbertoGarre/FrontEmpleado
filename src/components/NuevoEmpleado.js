@@ -1,22 +1,11 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 
-const NuevoEmpleado = ({ usuario }) => {
+const NuevoEmpleado = ({ usuario, añadeUsuario, actualizaUsuario }) => {
 
     if (usuario == null) {
         usuario = 0
     }
-
-    const añadoNuevoUsuario = (empleado) => {
-        console.log("AÑADO NUEVO USUARIO")
-        console.log(empleado)
-    }
-    const modificoUsuarioExistente = (empleado) => {
-        console.log("MODIFICO UN USUARIO EXISTENTE")
-        console.log(empleado)
-    }
-
-
 
     React.useEffect(() => {
         //consigue ejecutarse en el momento en el que se carga el componente por primera vez
@@ -51,6 +40,9 @@ const NuevoEmpleado = ({ usuario }) => {
                     onSubmit={(e) => {
                         e.preventDefault()
                         const empleado = {
+                            id: (usuario != 0 ? usuario.id : null),
+                            usuario: (usuario != 0 ? usuario.usuario : document.getElementById("nombre").value.substring(0, 2) + document.getElementById("apellidos").value.substring(0, 2)),
+                            franquicia: (usuario != 0 ? usuario.franquicia : 1),
                             nombre: document.getElementById("nombre").value,
                             apellidos: document.getElementById("apellidos").value,
                             email: document.getElementById("email").value,
@@ -70,7 +62,7 @@ const NuevoEmpleado = ({ usuario }) => {
                         setTimeout(() => {
                             navigate("/ListaUsuarios")
                         }, 100);
-                        (usuario == 0) ? añadoNuevoUsuario(empleado) : modificoUsuarioExistente(empleado)
+                        (usuario == 0) ? añadeUsuario(empleado) : actualizaUsuario(empleado)
                         return false
                     }}>
                     <div className="row">

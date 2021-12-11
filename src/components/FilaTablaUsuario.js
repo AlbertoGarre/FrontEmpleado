@@ -4,7 +4,7 @@ const FilaTablaUsuario = ({usuario, setUsuarioEdicionYRedirige}) => {
     return (
 
         <tr> 
-            <td><a href="#" className="text-success" onClick={() => setUsuarioEdicionYRedirige(usuario.key)}>{usuario.nombre}</a></td>
+            <td><a href="#" className="text-success" onClick={() => setUsuarioEdicionYRedirige(usuario.id)}>{usuario.nombre}</a></td>
             <td>{usuario.roles.map((rol) => (
                 rol + ' '
             ))}</td>

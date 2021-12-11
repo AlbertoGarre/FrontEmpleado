@@ -7,7 +7,7 @@ const InicioGeneral = () => {
 
     const usuario =
         {
-            key: 1,
+            id: 1,
             roles: ["Reparto", "Oficina", "Admin"],
         }
     
