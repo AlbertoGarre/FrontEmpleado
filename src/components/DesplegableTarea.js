@@ -65,7 +65,7 @@ const DesplegableTarea = ({paquete}) => {
                         <div>{paquete.tipo_servicio == "recogida" ? paquete.r_observaciones : paquete.e_observaciones}</div>
                     </div>
                     <br />
-                    <button type="submit" onClick={()=> navigate('/Confirmacion')} className="btn btn-success col-md-4 m-0 p-2 px-4 bg-success" style={paquete.terminada ? {visibility: "hidden"} : {}}>{paquete.tipo_servicio == 'entrega' ? 'Entrega': 'Recoge'}</button>
+                    <button type="submit" onClick={()=> navigate('/Confirmacion')} className="btn btn-success col-md-4 m-0 p-2 px-4 bg-success" style={paquete.terminado ? {visibility: "hidden"} : {}}>{paquete.tipo_servicio == 'entrega' ? 'Entrega': 'Recoge'}</button>
                     <br />
                 </div>
             </div>
