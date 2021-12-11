@@ -7,6 +7,8 @@ const NuevoUsuario = ({ usuario, añadeUsuario, actualizaUsuario }) => {
         usuario = 0
     }
 
+    const navigate = useNavigate();
+
     React.useEffect(() => {
         //consigue ejecutarse en el momento en el que se carga el componente por primera vez
         //así es como consigo mostrar los values & checked y editarlos despues
@@ -25,7 +27,7 @@ const NuevoUsuario = ({ usuario, añadeUsuario, actualizaUsuario }) => {
         }
     }, []);
 
-    const navigate = useNavigate();
+    
 
     return (
         <div id="content" className=" m-0 p-4" style={{ width: "100%" }}>
