@@ -3,12 +3,12 @@ import TarjetaTarifa from './TarjetaTarifa'
 import { useNavigate } from 'react-router-dom';
 
 
-const Tarifas = ({ tarifas, pulsa, tarifaSeleccionada }) => {
+const Tarifas = ({ tarifas, seleccionaTarifa, tarifaSeleccionada }) => {
 
     const navigate = useNavigate();
 
-    const pulsaYRedirige = (id) => {
-        pulsa(id)
+    const seleccionaTarifaYRedirige = (id) => {
+        seleccionaTarifa(id)
         setTimeout(() => {
             navigate('/NuevoEnvio')
         }, 1000);
@@ -27,7 +27,7 @@ const Tarifas = ({ tarifas, pulsa, tarifaSeleccionada }) => {
                         <TarjetaTarifa
                             seleccionada={tarifaSeleccionada == tarifa.id}
                             tarifa={tarifa}
-                            pulsa={pulsaYRedirige} />
+                            seleccionaTarifa={seleccionaTarifaYRedirige} />
                     ))}
                 </div>
             </div>

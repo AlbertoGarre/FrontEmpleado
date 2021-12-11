@@ -2,10 +2,6 @@ import React from 'react'
 
 const FilaTablaUsuario = ({usuario, setUsuarioEdicionYRedirige, borraUsuario}) => {
 
-    const alPulsar = () => {
-        console.log("PULSAAAA")
-    }
-
     return (
 
         <tr> 

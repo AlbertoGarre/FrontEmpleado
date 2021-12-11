@@ -220,7 +220,7 @@ const NuevoEnvio = ({ tarifas, seleccionaTarifa, tarifaSeleccionada}) => {
                         <TarjetaTarifa
                             seleccionada={tarifaSeleccionada == tarifa.id}
                             tarifa={tarifa}
-                            pulsa={seleccionaTarifa} />
+                            seleccionaTarifa={seleccionaTarifa} />
                     ))}
                 </div>
 
