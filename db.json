@@ -176,19 +176,6 @@
       "roles": [
         "Reparto"
       ]
-    },
-    {
-      "id": 7,
-      "usuario": "asas",
-      "franquicia": 1,
-      "nombre": "asd",
-      "apellidos": "asd",
-      "email": "asd@vontosox.com",
-      "telefono": "123",
-      "contraseña": "123",
-      "roles": [
-        "Reparto"
-      ]
     }
   ],
   "localizaciones": [

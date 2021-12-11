@@ -2,7 +2,7 @@ import React from 'react'
 import FilaTablaUsuario from './FilaTablaUsuario'
 import { useNavigate } from 'react-router-dom';
 
-const ListaUsuarios = ({usuarios, setUsuarioEdicion}) => {
+const ListaUsuarios = ({usuarios, setUsuarioEdicion, borraUsuario}) => {
 
     const navigate = useNavigate();
    
@@ -28,7 +28,8 @@ const ListaUsuarios = ({usuarios, setUsuarioEdicion}) => {
                         {usuarios.map((usuario) => (
                             <FilaTablaUsuario 
                                 usuario={usuario}
-                                setUsuarioEdicionYRedirige={setUsuarioEdicionYRedirige}/>)
+                                setUsuarioEdicionYRedirige={setUsuarioEdicionYRedirige}
+                                borraUsuario={borraUsuario}/>)
                         )}
                     </tbody>
                 </table>

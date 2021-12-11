@@ -1,14 +1,22 @@
 import React from 'react'
 
-const FilaTablaUsuario = ({usuario, setUsuarioEdicionYRedirige}) => {
+const FilaTablaUsuario = ({usuario, setUsuarioEdicionYRedirige, borraUsuario}) => {
+
+    const alPulsar = () => {
+        console.log("PULSAAAA")
+    }
+
     return (
 
         <tr> 
-            <td><a href="#" className="text-success" onClick={() => setUsuarioEdicionYRedirige(usuario.id)}>{usuario.nombre}</a></td>
+            <td><a href="#" className="text-success" onClick={() => {
+                console.log("HOLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+                setUsuarioEdicionYRedirige(usuario.id)}}>{usuario.nombre}</a></td>
             <td>{usuario.roles.map((rol) => (
                 rol + ' '
             ))}</td>
-            <td><a href="#" className="text-success d-flex justify-content-end">Borrar</a></td>
+            <td><a href="#" className="text-success d-flex justify-content-end" onClick={() => {borraUsuario(usuario.id) }}>
+                    Borrar</a></td>
         </tr>
 
     )

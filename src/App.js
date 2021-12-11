@@ -80,10 +80,12 @@ const App = () => {
     }
     //borrar usuario
     const borraUsuario = async (id) => {
-        await fetch(`http:localhost:5000/usuarios/${id}`, {
+        console.log("Borando el usuario", id)
+        await fetch(`http://localhost:5000/usuarios/${id}`, {
             method: 'DELETE'
         })
-        setUsuarios(usuarios.filter((usuario) => usuario.id !== id))
+        //setUsuarios(usuarios.filter((usuario) => usuario.id !== id))
+        fetchUsuarios()
     }
 
     // Añadir usuario
@@ -153,7 +155,7 @@ const App = () => {
                 <Route path='/TareasPendientes' element={<ListaTareas terminada={false} />} />
                 <Route path='/AsignacionTareas' element={<AsignacionTareas />} />
                 <Route path='/NuevoUsuario' element={<NuevoUsuario usuario={usuarios.find((usuario) => usuario.id == usuarioEdicion)} añadeUsuario={añadeUsuario} actualizaUsuario={actualizaUsuario} />} />
-                <Route path='/ListaUsuarios' element={<ListaUsuarios usuarios={usuarios} setUsuarioEdicion={editaUsuario} />} />
+                <Route path='/ListaUsuarios' element={<ListaUsuarios usuarios={usuarios} setUsuarioEdicion={editaUsuario} borraUsuario={borraUsuario}/>} />
                 <Route path='/Confirmacion' element={<Confirmacion />} />
                 <Route path='/NuevoEnvio' element={<NuevoEnvio tarifas={tarifas} seleccionaTarifa={seleccionaTarifa} tarifaSeleccionada={tarifaSeleccionada} />} />
 
