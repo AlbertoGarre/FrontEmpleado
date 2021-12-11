@@ -7,7 +7,7 @@ const TarjetaTarifa = ({ seleccionada, pulsa, tarifa }) => {
             <div className="card-header">
                 <h4 className="my-0 font-weight-normal">{tarifa.titulo}</h4>
             </div>
-            <div className="card-body" onClick={() => pulsa(tarifa.key)} style={{ backgroundColor: seleccionada ? 'green' : 'white' }}>
+            <div className="card-body" onClick={() =>  pulsa(tarifa.id)} style={{ backgroundColor: seleccionada ? 'green' : 'white' }}>
                 <h1 className="card-title pricing-card-title"> <small className={(seleccionada ? 'text-white' : 'text-muted')}>{tarifa.Precio} / envío</small></h1>
                 <ul className="list-unstyled mt-3 mb-4">
                     {tarifa.Cualidades.map((Cualidad) => (
