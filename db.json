@@ -260,5 +260,73 @@
         "03303"
       ]
     }
+  ],
+  "paquetes": [
+    {
+      "g_email": "m@contosox.com",
+      "g_remitente": "a",
+      "g_telefono": "951234567",
+      "g_nif": "489999123G",
+      "g_bultos": "1",
+      "r_pais": "Esp",
+      "r_cp": "03300",
+      "r_poblacion": "Orihuela",
+      "r_atencion": "Contosox",
+      "r_telefono": "987987987",
+      "r_contacto": "Yo",
+      "r_observaciones": "Con cuidao por favor",
+      "e_pais": "Esp",
+      "e_cp": "03300",
+      "e_provincia": "Murcia",
+      "e_poblacion": "Murcia",
+      "e_direccion": "Camino del Carcanox",
+      "e_numero": "53",
+      "e_escalera": "1",
+      "e_planta": "2",
+      "e_puerta": "A",
+      "e_destinatario": "Jose Manuel",
+      "e_telefono": "656123123",
+      "e_atencion": "JoseMa",
+      "e_observaciones": "Rápido",
+      "tarifa": 3,
+      "id": 1
+    },
+    {
+      "g_email": "a",
+      "g_remitente": "a",
+      "g_telefono": "951234567",
+      "g_nif": "489999123G",
+      "g_bultos": "1",
+      "r_pais": "Esp",
+      "r_cp": "03300",
+      "r_poblacion": "Murcia",
+      "r_atencion": "Contosox",
+      "r_telefono": "987987987",
+      "r_contacto": "Yo",
+      "r_observaciones": "Con cuidao por favor",
+      "e_pais": "Esp",
+      "e_cp": "03300",
+      "e_provincia": "Murcia",
+      "e_poblacion": "Murcia",
+      "e_direccion": "Camino del Carcanox",
+      "e_numero": "53",
+      "e_escalera": "1",
+      "e_planta": "asdf",
+      "e_puerta": "A",
+      "e_destinatario": "Alberto",
+      "e_telefono": "656123123",
+      "e_atencion": "Alberto",
+      "e_observaciones": "Rápido",
+      "tarifa": 1,
+      "id": 2,
+      "localizaciones": [
+          {"lugar": "repartidor: Ramon Heredia" , "hora": "123456789012"},
+          {"lugar": "oficina: Orihuela 03300" , "hora": "22345678999"},
+          {"lugar": "central: Murcia 30007" , "hora": "32345678999"},
+          {"lugar": "oficina: Torrevieja 03182" , "hora": "42345678999"},
+          {"lugar": "repartidor: Juan Fernandez" , "hora": "123456789012"},
+          {"lugar": "entregado", "hora": "4123456789"}
+      ]
+    }
   ]
 }

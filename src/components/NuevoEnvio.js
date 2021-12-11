@@ -44,29 +44,7 @@ const NuevoEnvio = ({ tarifas, seleccionaTarifa, tarifaSeleccionada}) => {
                         <a href="#" onClick={limpia} className="text-success">Limpiar campos</a>
                         <br /><br />
                         <h3>Datos de recogida</h3>
-                        <div className="form-row m-0 p-0">
-                            <div className="form-group col-md-3 m-0 p-0 mr-2">
-                                <label htmlFor="inputState">Fecha de recogida</label>
-                                <input type="date" id="inputState" className="form-control m-0 p-0">
-                                </input>
-                            </div>
-                            <div className="form-group col-md-2 m-0 p-0 mt-2 mr-2">
-                                <label htmlFor="inputCP"></label>
-                                <input type="text" className="form-control m-0 p-0" id="inputCP" placeholder="De 10:00 h" />
-                            </div>
-                            <div className="form-group col-md-2 m-0 p-0 mt-2 mr-2">
-                                <label htmlFor="inputCP"></label>
-                                <input type="text" className="form-control m-0 p-0" id="inputCP" placeholder="a 15:00 h" />
-                            </div>
-                            <div className="form-group col-md-2 m-0 p-0 mt-2 mr-2">
-                                <label htmlFor="inputCP"></label>
-                                <input type="text" className="form-control m-0 p-0" id="inputCP" placeholder="y de 17:00 h" />
-                            </div>
-                            <div className="form-group col-md-2 m-0 p-0 mt-2 mr-2">
-                                <label htmlFor="inputCP"></label>
-                                <input type="text" className="form-control m-0 p-0" id="inputCP" placeholder="a 19:00 h" />
-                            </div>
-                        </div>
+                        
 
                         <div className="form-row m-0 p-0">
                             <div className="form-group m-0 p-0 mr-2">
