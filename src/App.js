@@ -22,6 +22,8 @@ import ListaTareas from './components/ListaTareas'
 
 const App = () => {
 
+    const servidor = "192.168.1.47"
+
     const [usuarioEdicion, setUsuarioEdicion] = useState(0)
     const [usuarios, setUsuarios] = useState([])
     const [codigoSeguimiento, setCodigoSeguimiento] = useState('')
@@ -49,7 +51,7 @@ const App = () => {
     //GET
     //fetch usuario (solo 1)
     const fetchUsuario = async (id) => {
-        const res = await fetch(`http://localhost:5000/usuarios/${id}`)
+        const res = await fetch(`http://${servidor}:5000/usuarios/${id}`)
         const data = await res.json()
         return data
     }
@@ -57,7 +59,7 @@ const App = () => {
     //GET
     //fetch usuarios 
     const fetchUsuarios = async () => {
-        const res = await fetch('http://localhost:5000/usuarios')
+        const res = await fetch(`http://${servidor}:5000/usuarios`)
         const data = await res.json()
         //peticion GET de forma predeterminada
         setUsuarios(data)
@@ -66,7 +68,7 @@ const App = () => {
     //DELETE
     //borrar usuario
     const borraUsuario = async (id) => {
-        await fetch(`http://localhost:5000/usuarios/${id}`, {
+        await fetch(`http://${servidor}:5000/usuarios/${id}`, {
             method: 'DELETE'
         })
         fetchUsuarios()
@@ -75,7 +77,7 @@ const App = () => {
     //POST
     // crear usuario
     const añadeUsuario = async (usuario) => {
-        const res = await fetch('http://localhost:5000/usuarios', {
+        const res = await fetch(`http://${servidor}:5000/usuarios`, {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json',
@@ -88,7 +90,7 @@ const App = () => {
     //PUT
     //actualizar usuario
     const actualizaUsuario = async (usuarioActualizado) => {
-        const res = await fetch(`http://localhost:5000/usuarios/${usuarioActualizado.id}`, {
+        const res = await fetch(`http://${servidor}:5000/usuarios/${usuarioActualizado.id}`, {
             method: 'PUT',
             headers: {
                 'Content-type': 'application/json',
@@ -105,7 +107,7 @@ const App = () => {
     //GET
     //fetch Tarifas
     const fetchTarifas = async () => {
-        const res = await fetch('http://localhost:5000/tarifas')
+        const res = await fetch(`http://${servidor}:5000/tarifas`)
         const data = await res.json()
         //peticion GET de forma predeterminada
         setTarifas(data)
