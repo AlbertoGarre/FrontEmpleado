@@ -22,7 +22,7 @@ import ListaTareas from './components/ListaTareas'
 
 const App = () => {
 
-    const servidor = "localhost"
+    const servidor = "localhost:8000"
 
     const [usuarioEdicion, setUsuarioEdicion] = useState(0)
     const [usuarios, setUsuarios] = useState([])
@@ -49,13 +49,57 @@ const App = () => {
     }
 
     
+ ////////////////////////////PAQUETES////////////////////////////////////////////////////////
+    //GET
+    // (solo 1)
+    const fetchPaquete = async (id) => {
+        const res = await fetch(`http://${servidor}/api/paquetes/${id}`)
+        const data = await res.json()
+        return data
+    }
+
+    //GET
+    //
+    const fetchPaquetes = async () => {
+        const res = await fetch(`http://${servidor}/api/paquetes`)
+        const data = await res.json()
+        //peticion GET de forma predeterminada
+        setPaquetes(data.paquetes)
+    }
+
+
+    //POST
+    // crear paquete
+    const añadePaquete = async (paquete) => {
+        const res = await fetch(`http://${servidor}/api/paquetes`, {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json',
+            },
+            body: JSON.stringify(paquete),
+        })
+        fetchPaquetes()
+    }
+
+    //PUT
+    //actualizar paquete
+    const actualizaPaquete = async (paqueteActualizado) => {
+        const res = await fetch(`http://${servidor}/api/paquetes/${paqueteActualizado.id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-type': 'application/json',
+            },
+            body: JSON.stringify(paqueteActualizado),
+        })
+        fetchPaquetes()
+    }
 
 
     ////////////////////////////USUARIOS////////////////////////////////////////////////////////
     //GET
     // (solo 1)
     const fetchUsuario = async (id) => {
-        const res = await fetch(`http://${servidor}:5000/usuarios/${id}`)
+        const res = await fetch(`http://${servidor}/api/users/${id}`)
         const data = await res.json()
         return data
     }
@@ -63,16 +107,16 @@ const App = () => {
     //GET
     //
     const fetchUsuarios = async () => {
-        const res = await fetch(`http://${servidor}:5000/usuarios`)
+        const res = await fetch(`http://${servidor}/api/users`)
         const data = await res.json()
         //peticion GET de forma predeterminada
-        setUsuarios(data)
+        setUsuarios(data.usuarios)
     }
 
     //DELETE
     //borrar usuario
     const borraUsuario = async (id) => {
-        await fetch(`http://${servidor}:5000/usuarios/${id}`, {
+        await fetch(`http://${servidor}/api/users/${id}`, {
             method: 'DELETE'
         })
         fetchUsuarios()
@@ -81,7 +125,7 @@ const App = () => {
     //POST
     // crear usuario
     const añadeUsuario = async (usuario) => {
-        const res = await fetch(`http://${servidor}:5000/usuarios`, {
+        const res = await fetch(`http://${servidor}/api/users`, {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json',
@@ -94,7 +138,7 @@ const App = () => {
     //PUT
     //actualizar usuario
     const actualizaUsuario = async (usuarioActualizado) => {
-        const res = await fetch(`http://${servidor}:5000/usuarios/${usuarioActualizado.id}`, {
+        const res = await fetch(`http://${servidor}/api/users/${usuarioActualizado.id}`, {
             method: 'PUT',
             headers: {
                 'Content-type': 'application/json',
@@ -111,7 +155,7 @@ const App = () => {
     //GET
     //
     const fetchTarifas = async () => {
-        const res = await fetch(`http://${servidor}:8000/api/tarifas`)
+        const res = await fetch(`http://${servidor}/api/tarifas`)
         const data = await res.json()
         //peticion GET de forma predeterminada
         setTarifas(data.tarifas)
@@ -122,7 +166,7 @@ const App = () => {
     //GET
     //
     const fetchPaquetes = async () => {
-        const res = await fetch(`http://${servidor}:5000/paquetes`)
+        const res = await fetch(`http://localhost:5000/paquetes`)
         const data = await res.json()
         //peticion GET de forma predeterminada
         setPaquetes(data)

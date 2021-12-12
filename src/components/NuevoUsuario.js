@@ -13,17 +13,23 @@ const NuevoUsuario = ({ usuario, añadeUsuario, actualizaUsuario }) => {
         //consigue ejecutarse en el momento en el que se carga el componente por primera vez
         //así es como consigo mostrar los values & checked y editarlos despues
         if (usuario != 0) {
-            document.getElementById("nombre").value = usuario.nombre
+            document.getElementById("nombre").value = usuario.name
             document.getElementById("apellidos").value = usuario.apellidos
             document.getElementById("email").value = usuario.email
             document.getElementById("telefono").value = usuario.telefono
-            document.getElementById("clave").value = usuario.nombre
+            document.getElementById("clave").value = usuario.password;
 
-            document.getElementById("checkBoxRolReparto").checked = usuario.roles.includes("Reparto")
-            document.getElementById("checkBoxRolOficina").checked = usuario.roles.includes("Oficina")
-            document.getElementById("checkBoxRolAdmin").checked = usuario.roles.includes("Admin")
-
-
+            if(usuario.Reparto == 'true'){
+                document.getElementById("checkBoxRolReparto").checked = true
+            }
+            
+            if(usuario.Oficina == 'true') {
+                document.getElementById("checkBoxRolOficina").checked = true 
+            }    
+            
+            if(usuario.Admin == 'true') {
+                document.getElementById("checkBoxRolAdmin").checked = true
+            }
         }
     }, []);
 
@@ -43,24 +49,18 @@ const NuevoUsuario = ({ usuario, añadeUsuario, actualizaUsuario }) => {
                         e.preventDefault()
                         const empleado = {
                             id: (usuario != 0 ? usuario.id : null),
-                            usuario: (usuario != 0 ? usuario.usuario : document.getElementById("nombre").value.substring(0, 2) + document.getElementById("apellidos").value.substring(0, 2)),
+                            username: (usuario != 0 ? usuario.usuario : document.getElementById("nombre").value.substring(0, 2) + document.getElementById("apellidos").value.substring(0, 2)),
                             franquicia: (usuario != 0 ? usuario.franquicia : 1),
-                            nombre: document.getElementById("nombre").value,
+                            name: document.getElementById("nombre").value,
                             apellidos: document.getElementById("apellidos").value,
                             email: document.getElementById("email").value,
                             telefono: document.getElementById("telefono").value,
-                            contraseña: document.getElementById("clave").value,
-                            roles: []
+                            password: document.getElementById("clave").value,
+                            Reparto: (document.getElementById("checkBoxRolReparto").checked ? 'true': 'false'),
+                            Oficina: (document.getElementById("checkBoxRolOficina").checked ? 'true': 'false'),
+                            Admin: (document.getElementById("checkBoxRolAdmin").checked ? 'true': 'false'),
                         }
-                        if (document.getElementById("checkBoxRolReparto").checked) {
-                            empleado.roles.push("Reparto")
-                        }
-                        if (document.getElementById("checkBoxRolOficina").checked) {
-                            empleado.roles.push("Oficina")
-                        }
-                        if (document.getElementById("checkBoxRolAdmin").checked) {
-                            empleado.roles.push("Admin")
-                        }
+                        
                         setTimeout(() => {
                             navigate("/ListaUsuarios")
                         }, 100);
