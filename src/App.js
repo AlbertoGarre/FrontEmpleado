@@ -31,7 +31,7 @@ const App = () => {
     const [tarifas, setTarifas] = useState([])
     const [paquetes, setPaquetes] = useState([])
 
-    const [usuarioActual, setUsuarioActual] = useState(4)
+    const [usuarioActual, setUsuarioActual] = useState({})
 
     //establece que tarifa vamos a contratar
     //es un estado que se guarda en FRONTEND, no en el servidor
@@ -100,7 +100,11 @@ const App = () => {
     const fetchUsuario = async (id) => {
         const res = await fetch(`http://${servidor}/api/users/${id}`)
         const data = await res.json()
-        return data
+        console.log(data.user)
+        setUsuarioActual(data.user)
+
+
+        return data.user
     }
 
     //GET
@@ -165,6 +169,9 @@ const App = () => {
         fetchUsuarios()
         fetchTarifas()
         fetchPaquetes()
+        
+        let usuario = fetchUsuario(2)
+        setUsuarioActual(usuario) 
         //[] dependency array Si tienes un valor  y queremos que la función useEffect funcione si el valor cambia, pasaremos el valor dentro del array de dependencia [valor]
     }, [])
 
@@ -175,10 +182,10 @@ const App = () => {
             <HeaderInterno />
             <Routes>
 
-                <Route path='/' element={<InicioGeneral />} />
+                <Route path='/' element={<InicioGeneral usuarioActual={usuarioActual} />} />
 
-                <Route path='/TareasFinalizadas' element={<ListaTareas terminado={true} paquetes={paquetes} usuarioActual={usuarioActual}/>} />
-                <Route path='/TareasPendientes' element={<ListaTareas terminado={false} paquetes={paquetes} usuarioActual={usuarioActual}/>} />
+                <Route path='/TareasFinalizadas' element={<ListaTareas terminado={true} paquetes={paquetes} usuarioActual={usuarioActual.id}/>} />
+                <Route path='/TareasPendientes' element={<ListaTareas terminado={false} paquetes={paquetes} usuarioActual={usuarioActual.id}/>} />
                 <Route path='/AsignacionTareas' element={<AsignacionTareas />} />
                 <Route path='/NuevoUsuario' element={<NuevoUsuario usuario={usuarios.find((usuario) => usuario.id == usuarioEdicion)} añadeUsuario={añadeUsuario} actualizaUsuario={actualizaUsuario} />} />
                 <Route path='/ListaUsuarios' element={<ListaUsuarios usuarios={usuarios} setUsuarioEdicion={editaUsuario} borraUsuario={borraUsuario} />} />

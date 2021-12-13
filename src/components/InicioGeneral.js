@@ -3,7 +3,7 @@ import InicioAdmin from './InicioAdmin'
 import InicioReparto from './InicioReparto'
 import InicioOficina from './InicioOficina'
 
-const InicioGeneral = () => {
+const InicioGeneral = ({usuarioActual}) => {
 
     const usuario =
         {
@@ -17,9 +17,9 @@ const InicioGeneral = () => {
             <br />
             <br />
             <br />
-            {usuario.roles.includes("Reparto") ? <InicioReparto usuario={usuario}/>: null}
-            {usuario.roles.includes("Oficina") ? <InicioOficina />: null}
-            {usuario.roles.includes("Admin") ? <InicioAdmin />: null}
+            {usuarioActual.Reparto ? <InicioReparto />: null}
+            {usuarioActual.Oficina ? <InicioOficina />: null}
+            {usuarioActual.Admin ? <InicioAdmin />: null}
                         
         </div>
     )
