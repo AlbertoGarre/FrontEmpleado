@@ -170,7 +170,7 @@ const App = () => {
         fetchTarifas()
         fetchPaquetes()
         
-        let usuario = fetchUsuario(2)
+        let usuario = fetchUsuario(3)
         setUsuarioActual(usuario) 
         //[] dependency array Si tienes un valor  y queremos que la función useEffect funcione si el valor cambia, pasaremos el valor dentro del array de dependencia [valor]
     }, [])
@@ -186,7 +186,7 @@ const App = () => {
 
                 <Route path='/TareasFinalizadas' element={<ListaTareas terminado={true} paquetes={paquetes} usuarioActual={usuarioActual.id}/>} />
                 <Route path='/TareasPendientes' element={<ListaTareas terminado={false} paquetes={paquetes} usuarioActual={usuarioActual.id}/>} />
-                <Route path='/AsignacionTareas' element={<AsignacionTareas />} />
+                <Route path='/AsignacionTareas' element={<AsignacionTareas servidor={servidor} usuarioActual={usuarioActual.id}/>} />
                 <Route path='/NuevoUsuario' element={<NuevoUsuario usuario={usuarios.find((usuario) => usuario.id == usuarioEdicion)} añadeUsuario={añadeUsuario} actualizaUsuario={actualizaUsuario} />} />
                 <Route path='/ListaUsuarios' element={<ListaUsuarios usuarios={usuarios} setUsuarioEdicion={editaUsuario} borraUsuario={borraUsuario} />} />
                 <Route path='/Confirmacion' element={<Confirmacion />} />
