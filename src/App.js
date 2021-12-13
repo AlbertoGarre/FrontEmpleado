@@ -161,17 +161,6 @@ const App = () => {
         setTarifas(data.tarifas)
     }
 
-    ////////////////////////////PAQUETES////////////////////////////////////////////////////////
-
-    //GET
-    //
-    const fetchPaquetes = async () => {
-        const res = await fetch(`http://localhost:5000/paquetes`)
-        const data = await res.json()
-        //peticion GET de forma predeterminada
-        setPaquetes(data)
-    }
-
     
     useEffect(() => {
         fetchUsuarios()
@@ -195,7 +184,7 @@ const App = () => {
                 <Route path='/NuevoUsuario' element={<NuevoUsuario usuario={usuarios.find((usuario) => usuario.id == usuarioEdicion)} añadeUsuario={añadeUsuario} actualizaUsuario={actualizaUsuario} />} />
                 <Route path='/ListaUsuarios' element={<ListaUsuarios usuarios={usuarios} setUsuarioEdicion={editaUsuario} borraUsuario={borraUsuario} />} />
                 <Route path='/Confirmacion' element={<Confirmacion />} />
-                <Route path='/NuevoEnvio' element={<NuevoEnvio tarifas={tarifas} seleccionaTarifa={seleccionaTarifa} tarifaSeleccionada={tarifaSeleccionada} />} />
+                <Route path='/NuevoEnvio' element={<NuevoEnvio tarifas={tarifas} seleccionaTarifa={seleccionaTarifa} tarifaSeleccionada={tarifaSeleccionada} añadePaquete={añadePaquete}/>} />
 
 
             </Routes>
