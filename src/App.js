@@ -31,8 +31,7 @@ const App = () => {
     const [tarifas, setTarifas] = useState([])
     const [paquetes, setPaquetes] = useState([])
 
-
-
+    const [usuarioActual, setUsuarioActual] = useState(4)
 
     //establece que tarifa vamos a contratar
     //es un estado que se guarda en FRONTEND, no en el servidor
@@ -178,8 +177,8 @@ const App = () => {
 
                 <Route path='/' element={<InicioGeneral />} />
 
-                <Route path='/TareasFinalizadas' element={<ListaTareas terminado={true} paquetes={paquetes}/>} />
-                <Route path='/TareasPendientes' element={<ListaTareas terminado={false} paquetes={paquetes}/>} />
+                <Route path='/TareasFinalizadas' element={<ListaTareas terminado={true} paquetes={paquetes} usuarioActual={usuarioActual}/>} />
+                <Route path='/TareasPendientes' element={<ListaTareas terminado={false} paquetes={paquetes} usuarioActual={usuarioActual}/>} />
                 <Route path='/AsignacionTareas' element={<AsignacionTareas />} />
                 <Route path='/NuevoUsuario' element={<NuevoUsuario usuario={usuarios.find((usuario) => usuario.id == usuarioEdicion)} añadeUsuario={añadeUsuario} actualizaUsuario={actualizaUsuario} />} />
                 <Route path='/ListaUsuarios' element={<ListaUsuarios usuarios={usuarios} setUsuarioEdicion={editaUsuario} borraUsuario={borraUsuario} />} />

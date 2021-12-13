@@ -1,7 +1,7 @@
 import React from 'react'
 import DesplegableTarea from './DesplegableTarea'
 
-const ListaTareas = ({terminado, paquetes}) => {
+const ListaTareas = ({terminado, paquetes, usuarioActual}) => {
 
     return (
         <div id="content " className=" m-0 p-4 " style={{ width: "100%" }}>
@@ -9,6 +9,7 @@ const ListaTareas = ({terminado, paquetes}) => {
             <div id="accordion">
 
                 {paquetes
+                    .filter((paquete) => paquete.asignado == usuarioActual)
                     .filter((paquete) => paquete.terminado == terminado)
                     .map((paquete) => (
                         <DesplegableTarea
