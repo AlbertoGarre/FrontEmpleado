@@ -88,7 +88,7 @@ const NuevoEnvio = ({ tarifas, seleccionaTarifa, tarifaSeleccionada, añadePaque
                                 e_atencion: document.getElementById("e_NombreAtencion").value,
                                 e_observaciones: document.getElementById("e_Observaciones").value,
                                 asignado: '',
-                                terminado: 'false',
+                                terminado: false,
                                 tipo_servicio: '',
                                 //tarifas
                                 tarifa: tarifaSeleccionada,
